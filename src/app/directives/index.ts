@@ -1,3 +1,7 @@
-import { CarouselHandlerDirective } from './carousel-handler.directive';
+import { CarouselHandlerDirective } from './carouselHandler';
+import { CarouselDisableChildrenDirective } from './disableChildren';
 
-export { CarouselHandlerDirective };
+export {
+  CarouselHandlerDirective,
+  CarouselDisableChildrenDirective
+};

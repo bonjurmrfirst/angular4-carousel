@@ -11,15 +11,19 @@ import {
   PinsComponent
 } from './components';
 
-import { CarouselHandlerDirective } from './directives';
+import {
+  CarouselHandlerDirective,
+  CarouselDisableChildrenDirective
+} from './directives';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarouselRootComponent,
     CarouselArrowsComponent,
+    PinsComponent,
     CarouselHandlerDirective,
-    PinsComponent
+    CarouselDisableChildrenDirective
   ],
   imports: [
     CommonModule,

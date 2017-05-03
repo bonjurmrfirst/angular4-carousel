@@ -1,4 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+
+import { CarouselDisableChildrenDirective } from '../../../../../directives/disableChildren';
 
 @Component({
   selector: 'carousel-pins',
@@ -11,11 +13,13 @@ export class PinsComponent {
 
   @Output() changeSlide: EventEmitter<number> = new EventEmitter();
 
+  @ViewChild(CarouselDisableChildrenDirective)
+  public carouselDisableChildrenDirective: CarouselDisableChildrenDirective;
+
   constructor() { }
 
   public onChangeSlide(slideIndex): void {
     this.changeSlide.emit(slideIndex);
+    this.carouselDisableChildrenDirective.disableChildren();
   }
 }
-
-// todo rename slides

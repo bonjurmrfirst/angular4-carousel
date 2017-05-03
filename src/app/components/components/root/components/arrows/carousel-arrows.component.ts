@@ -1,4 +1,6 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
+
+import { CarouselDisableChildrenDirective } from '../../../../../directives/disableChildren';
 
 @Component({
   selector: 'carousel-arrows',
@@ -8,10 +10,14 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class CarouselArrowsComponent {
   @Output() changeSlide: EventEmitter<string> = new EventEmitter();
 
+  @ViewChild(CarouselDisableChildrenDirective)
+  public carouselDisableChildrenDirective: CarouselDisableChildrenDirective;
+
   constructor() {}
 
   public onChangeSlide(direction: string): void {
     this.changeSlide.emit(direction);
+    this.carouselDisableChildrenDirective.disableChildren();
   }
 }
 

@@ -13,6 +13,11 @@ import {
   PinsComponent
 } from './components';
 
+import {
+  CarouselHandlerDirective,
+  CarouselDisableChildrenDirective
+} from './directives';
+
 export {
   CarouselModule,
   CarouselService,
@@ -21,5 +26,7 @@ export {
   AppComponent,
   CarouselRootComponent,
   CarouselArrowsComponent,
-  PinsComponent
+  PinsComponent,
+  CarouselHandlerDirective,
+  CarouselDisableChildrenDirective
 };

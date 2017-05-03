@@ -1,6 +1,6 @@
 import { Directive, OnInit, ElementRef } from '@angular/core';
 
-import { CarouselService, ICarouselConfig } from '../services';
+import { CarouselService, ICarouselConfig } from '../../services';
 
 @Directive({
   selector: '[appCarouselHandler]'

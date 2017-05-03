@@ -1,11 +1,17 @@
 .carousel-nav {
   position: absolute;
+}
 
-  /*&__btn--left {
+.carousel-nav__btn {
+  &--left {
 
   }
 
-  &__btn--right {
+  &--right {
 
-  }*/
+  }
+
+  &--disabled {
+    pointer-events: none;
+  }
 }

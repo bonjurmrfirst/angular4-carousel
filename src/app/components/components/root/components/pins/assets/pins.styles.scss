@@ -11,4 +11,8 @@ $_color: #0070ff;
   &__item--current {
     background-color: $_color;
   }
+
+  &__item--disabled {
+    pointer-events: none;
+  }
 }

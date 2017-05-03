@@ -57,9 +57,11 @@ export class CarouselService {
       const imgElement = document.createElement('img');
       imgElement.src = image;
 
-      imgElement.onload = (e) => { // todo private func
+      imgElement.onload = () => {
         this.imageLoadedCount++;
         this.imageLoad.next(image);
+
+        this.carouselTinyLog(image, true);
 
         emitIfAllImagesLoaded();
       };
@@ -69,9 +71,18 @@ export class CarouselService {
 
         emitIfAllImagesLoaded();
 
-        console.error(`Carousel module: image load error: ${image}`);
+        this.carouselTinyLog(image, false);
       };
     });
+  }
+
+  private carouselTinyLog(image: string, isLoaded: boolean): void {
+    if (isLoaded) {
+      console.log(`Carousel module: image loaded: ${image}`);
+      return;
+    }
+
+    console.error(`Carousel module: image load error: ${image}`);
   }
 }
 

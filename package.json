@@ -1,17 +1,21 @@
 {
   "name": "angular4-carousel",
   "description": "Animated angular2/4 carousel",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/bonjurmrfirst/angular4-carousel"
+  },
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --poll=1000",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",

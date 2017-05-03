@@ -2,6 +2,7 @@ import { AppComponent } from './app.component';
 
 import {
   CarouselRootComponent,
+  SlideComponent,
   CarouselArrowsComponent,
   PinsComponent
 } from './components';
@@ -9,6 +10,7 @@ import {
 export {
   AppComponent,
   CarouselRootComponent,
+  SlideComponent,
   CarouselArrowsComponent,
   PinsComponent
 };

@@ -9,6 +9,7 @@ import {
 import {
   AppComponent,
   CarouselRootComponent,
+  SlideComponent,
   CarouselArrowsComponent,
   PinsComponent
 } from './components';
@@ -25,6 +26,7 @@ export {
   AnimationConfig,
   AppComponent,
   CarouselRootComponent,
+  SlideComponent,
   CarouselArrowsComponent,
   PinsComponent,
   CarouselHandlerDirective,

@@ -1,3 +1,3 @@
-import { CarouselArrowsComponent } from './carousel-arrows.component';
+import { CarouselArrowsComponent } from './arrows.component';
 
 export { CarouselArrowsComponent };

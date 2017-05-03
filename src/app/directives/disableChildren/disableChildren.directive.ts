@@ -17,7 +17,7 @@ export class CarouselDisableChildrenDirective  {
     setTimeout(toggleFunc, 700);
   }
 
-  private toggleClass(elements, className: string) {
+  private toggleClass(elements: HTMLElement[], className: string): void {
     elements.forEach((element) => {
       element.classList.toggle(className);
     });

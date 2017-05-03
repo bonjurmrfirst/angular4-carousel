@@ -7,6 +7,7 @@ import { CarouselService } from './services';
 import {
   AppComponent,
   CarouselRootComponent,
+  SlideComponent,
   CarouselArrowsComponent,
   PinsComponent
 } from './components';
@@ -20,6 +21,7 @@ import {
   declarations: [
     AppComponent,
     CarouselRootComponent,
+    SlideComponent,
     CarouselArrowsComponent,
     PinsComponent,
     CarouselHandlerDirective,

@@ -1,14 +1,12 @@
 <div class="carousel-wrapper" appCarouselHandler>
-  <!-- slides-component? -->
-  <img class="slide"
+  <carousel-slide
        *ngFor="let img of loadedImages; let i = index"
        [src]="img"
-       [attr.data-slide]="i"
-       [class.slide--hidden-initial]="i !== 0">
+       [slideNo]="i"
+       [isHidden]="i !== 0">
+  </carousel-slide>
 
-  <carousel-arrows
-    (changeSlide)="onChangeSlide($event);">
-  </carousel-arrows>
+  <carousel-arrows (changeSlide)="onChangeSlide($event);"></carousel-arrows>
 
   <carousel-pins
     [images]="loadedImages"

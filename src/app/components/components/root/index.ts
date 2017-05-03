@@ -1,8 +1,9 @@
 import { CarouselRootComponent } from './carousel-root.component';
 
-import { CarouselArrowsComponent, PinsComponent } from './components';
+import { SlideComponent, CarouselArrowsComponent, PinsComponent } from './components';
 
 export {
+  SlideComponent,
   CarouselRootComponent,
   CarouselArrowsComponent,
   PinsComponent

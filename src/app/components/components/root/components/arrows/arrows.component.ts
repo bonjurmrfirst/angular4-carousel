@@ -4,8 +4,8 @@ import { CarouselDisableChildrenDirective } from '../../../../../directives/disa
 
 @Component({
   selector: 'carousel-arrows',
-  templateUrl: './carousel-arrows.template.html',
-  styleUrls: ['./assets/carousel-arrows.styles.scss']
+  templateUrl: 'arrows.template.html',
+  styleUrls: ['assets/arrows.styles.scss']
 })
 export class CarouselArrowsComponent {
   @Output() changeSlide: EventEmitter<string> = new EventEmitter();

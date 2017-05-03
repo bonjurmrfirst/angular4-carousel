@@ -23,7 +23,7 @@ export class AppComponent {
     log: true,
     animation: true,
     animationType: AnimationConfig.SLIDE,
-    autoplay: false,
+    autoplay: true,
     autoplayDelay: 3000
   };
 

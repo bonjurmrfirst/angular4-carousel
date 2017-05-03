@@ -7,14 +7,12 @@
        [class.slide--hidden-initial]="i !== 0">
 
   <carousel-arrows
-    (changeSlide)="onChangeSlide($event);
-    stopAutoplay();">
+    (changeSlide)="onChangeSlide($event);">
   </carousel-arrows>
 
   <carousel-pins
     [images]="loadedImages"
     [currentSlide]="currentSlide"
-    (changeSlide)="onChangeSlideIndex($event);
-    stopAutoplay();">
+    (changeSlide)="onChangeSlideIndex($event);">
   </carousel-pins>
 </div>

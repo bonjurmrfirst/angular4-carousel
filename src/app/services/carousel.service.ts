@@ -8,7 +8,7 @@ import {
   AnimationConfig
 } from './declarations';
 
-@Injectable() // todo API
+@Injectable()
 export class CarouselService {
   private imageLoadedCount = 0;
 
@@ -61,7 +61,7 @@ export class CarouselService {
         this.imageLoadedCount++;
         this.imageLoad.next(image);
 
-        this.carouselTinyLog(image, true);
+        this.carouselTinyLogger(image, true);
 
         emitIfAllImagesLoaded();
       };
@@ -71,12 +71,12 @@ export class CarouselService {
 
         emitIfAllImagesLoaded();
 
-        this.carouselTinyLog(image, false);
+        this.carouselTinyLogger(image, false);
       };
     });
   }
 
-  private carouselTinyLog(image: string, isLoaded: boolean): void {
+  private carouselTinyLogger(image: string, isLoaded: boolean): void {
     if (isLoaded) {
       console.log(`Carousel module: image loaded: ${image}`);
       return;

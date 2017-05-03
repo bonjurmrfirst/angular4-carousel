@@ -36,7 +36,9 @@ export class CarouselRootComponent implements OnInit {
     }
   }
 
-  public onChangeSlide(direction): void {
+  public onChangeSlide(direction: string, continueAutoplay?: boolean): void {
+    this.checkAutoplay(continueAutoplay);
+
     if (direction === 'prev') {
       this.currentSlide = this.currentSlide === 0 ? this.loadedImages.length - 1 : --this.currentSlide;
     } else {
@@ -45,7 +47,9 @@ export class CarouselRootComponent implements OnInit {
     this.carouselHandlerDirective.setNewSlide(this.currentSlide, direction);
   }
 
-  public onChangeSlideIndex(index: number): void {
+  public onChangeSlideIndex(index: number, continueAutoplay?: boolean): void {
+    this.checkAutoplay(continueAutoplay);
+
     if (index === this.currentSlide) {
       return;
     }
@@ -60,9 +64,15 @@ export class CarouselRootComponent implements OnInit {
     clearInterval(this.autoplayIntervalId);
   }
 
+  private checkAutoplay(continueAutoplay: boolean): void {
+    if (!continueAutoplay) {
+      clearInterval(this.autoplayIntervalId);
+    }
+  }
+
   private startAutoplay(delay: number): void {
     this.autoplayIntervalId = setInterval(() => {
-      this.onChangeSlide('next');
+      this.onChangeSlide('next', true);
     }, delay);
   }
 }

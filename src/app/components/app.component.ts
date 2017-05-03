@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { ICarouselConfig, AnimationConfig } from "../services";
 
 @Component({

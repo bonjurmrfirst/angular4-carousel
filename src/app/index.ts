@@ -8,7 +8,9 @@ import {
 
 import {
   AppComponent,
-  CarouselRootComponent
+  CarouselRootComponent,
+  CarouselArrowsComponent,
+  PinsComponent
 } from './components';
 
 export {
@@ -17,5 +19,7 @@ export {
   ICarouselConfig,
   AnimationConfig,
   AppComponent,
-  CarouselRootComponent
+  CarouselRootComponent,
+  CarouselArrowsComponent,
+  PinsComponent
 };

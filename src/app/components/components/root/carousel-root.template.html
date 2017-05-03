@@ -6,15 +6,15 @@
        [attr.data-slide]="i"
        [class.slide--hidden-initial]="i !== 0">
 
-  <!--app-carousel-nav
+  <carousel-arrows
     (changeSlide)="onChangeSlide($event);
     stopAutoplay();">
-  </app-carousel-nav-->
+  </carousel-arrows>
 
-  <!--app-carousel-nav-list
+  <carousel-pins
     [images]="loadedImages"
     [currentSlide]="currentSlide"
     (changeSlide)="onChangeSlideIndex($event);
     stopAutoplay();">
-  </app-carousel-nav-list-->
+  </carousel-pins>
 </div>

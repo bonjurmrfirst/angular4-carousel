@@ -1,0 +1,14 @@
+$_color: #0070ff;
+
+.carousel-nav-list {
+  position: absolute;
+  bottom: 0;
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__item--current {
+    background-color: $_color;
+  }
+}

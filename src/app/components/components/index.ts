@@ -1,3 +1,11 @@
-import { CarouselRootComponent } from './carousel-root.component';
+import {
+  CarouselRootComponent,
+  CarouselArrowsComponent,
+  PinsComponent
+} from './root';
 
-export { CarouselRootComponent };
+export {
+  CarouselRootComponent,
+  CarouselArrowsComponent,
+  PinsComponent
+};

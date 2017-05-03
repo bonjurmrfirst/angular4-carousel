@@ -1,12 +1,7 @@
-/**
- * Created by Illia_Potsepaiev on 4/28/2017.
- */
-
 import { Component, OnInit, Input, ViewChild, forwardRef } from '@angular/core';
 
-import { CarouselService, ICarouselConfig } from '../../services';
-
-import { CarouselHandlerDirective } from '../../directives';
+import { CarouselService, ICarouselConfig } from '../../../services';
+import { CarouselHandlerDirective } from '../../../directives';
 
 @Component({
   selector: 'carousel-root',
@@ -47,7 +42,6 @@ export class CarouselRootComponent implements OnInit {
     } else {
       this.currentSlide = this.currentSlide === this.loadedImages.length - 1 ? 0 : ++this.currentSlide;
     }
-
     this.carouselHandlerDirective.setNewSlide(this.currentSlide, direction);
   }
 

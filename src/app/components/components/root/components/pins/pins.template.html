@@ -1,0 +1,8 @@
+<ul class="carousel-nav-list">
+  <li class="carousel-nav-list__item"
+      *ngFor="let counter of images; let i = index"
+      (click)="onChangeSlide(i)"
+      [class.carousel-nav-list__item--current]="currentSlide === i">
+    {{i}}
+  </li>
+</ul>

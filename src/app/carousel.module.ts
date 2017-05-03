@@ -1,26 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import { CarouselService } from './services';
 
 import {
   AppComponent,
-  CarouselRootComponent
+  CarouselRootComponent,
+  CarouselArrowsComponent,
+  PinsComponent
 } from './components';
+
+import { CarouselHandlerDirective } from './directives';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarouselRootComponent
+    CarouselRootComponent,
+    CarouselArrowsComponent,
+    CarouselHandlerDirective,
+    PinsComponent
   ],
   imports: [
     CommonModule,
-    BrowserModule,
-    FormsModule,
-    HttpModule
+    BrowserModule
   ],
   exports: [CarouselRootComponent],
   providers: [CarouselService],

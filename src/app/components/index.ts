@@ -1,8 +1,14 @@
 import { AppComponent } from './app.component';
 
-import { CarouselRootComponent } from './components';
+import {
+  CarouselRootComponent,
+  CarouselArrowsComponent,
+  PinsComponent
+} from './components';
 
 export {
   AppComponent,
-  CarouselRootComponent
+  CarouselRootComponent,
+  CarouselArrowsComponent,
+  PinsComponent
 };

@@ -1,5 +1,6 @@
 {
   "name": "angular4-carousel",
+  "description": "Animated angular2/4 carousel",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {

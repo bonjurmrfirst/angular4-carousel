@@ -20,5 +20,3 @@ export class CarouselArrowsComponent {
     this.carouselDisableChildrenDirective.disableChildren();
   }
 }
-
-// todo rename arrows-component

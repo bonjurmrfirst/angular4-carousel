@@ -4,11 +4,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './components/app.component';
+import { CarouselService } from './services';
+
+import {
+  AppComponent,
+  CarouselRootComponent
+} from './components';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CarouselRootComponent
   ],
   imports: [
     CommonModule,
@@ -16,7 +22,8 @@ import { AppComponent } from './components/app.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  exports: [CarouselRootComponent],
+  providers: [CarouselService],
   bootstrap: [AppComponent]
 })
 export class CarouselModule { }

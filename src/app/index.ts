@@ -6,9 +6,16 @@ import {
   AnimationConfig
 } from './services';
 
+import {
+  AppComponent,
+  CarouselRootComponent
+} from './components';
+
 export {
   CarouselModule,
   CarouselService,
   ICarouselConfig,
-  AnimationConfig
+  AnimationConfig,
+  AppComponent,
+  CarouselRootComponent
 };

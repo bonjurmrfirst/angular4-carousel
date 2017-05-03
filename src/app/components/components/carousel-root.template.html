@@ -1,0 +1,20 @@
+<div class="carousel-wrapper" appCarouselHandler>
+  <!-- slides-component? -->
+  <img class="slide"
+       *ngFor="let img of loadedImages; let i = index"
+       [src]="img"
+       [attr.data-slide]="i"
+       [class.slide--hidden-initial]="i !== 0">
+
+  <!--app-carousel-nav
+    (changeSlide)="onChangeSlide($event);
+    stopAutoplay();">
+  </app-carousel-nav-->
+
+  <!--app-carousel-nav-list
+    [images]="loadedImages"
+    [currentSlide]="currentSlide"
+    (changeSlide)="onChangeSlideIndex($event);
+    stopAutoplay();">
+  </app-carousel-nav-list-->
+</div>

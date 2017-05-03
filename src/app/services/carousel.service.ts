@@ -8,7 +8,7 @@ import {
   AnimationConfig
 } from './declarations';
 
-@Injectable()
+@Injectable() // todo API
 export class CarouselService {
   private imageLoadedCount = 0;
 

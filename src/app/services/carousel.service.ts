@@ -73,9 +73,9 @@ export class CarouselService {
   private onImageElementLoadError(imageSources: string[], image: string): any {
     imageSources.splice(imageSources.indexOf(image), 1);
 
-    this.emitIfAllImagesLoaded(imageSources);
-
     this.carouselTinyLogger(image, false);
+
+    this.emitIfAllImagesLoaded(imageSources);
   }
 
   private emitIfAllImagesLoaded(imageSources: string[]) {

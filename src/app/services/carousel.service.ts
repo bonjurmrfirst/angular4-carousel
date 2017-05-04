@@ -17,14 +17,7 @@ export class CarouselService {
 
   constructor() {}
 
-  public init(imageSources: string[], config: ICarouselConfig = {
-    verifyBeforeLoad: true,
-    log: true,
-    animation: true,
-    animationType: AnimationConfig.SLIDE,
-    autoplay: true,
-    autoplayDelay: 3000
-  }) {
+  public init(imageSources: string[], config: ICarouselConfig) {
     config.autoplayDelay = config.autoplayDelay < 1000 ? 1000 : config.autoplayDelay;
 
     this.config = config;
@@ -53,9 +46,9 @@ export class CarouselService {
       const imgElement = document.createElement('img');
       imgElement.src = image;
 
-      imgElement.onload = this.onImageElementLoad(imageSources, image);
+      imgElement.onload = this.onImageElementLoad.bind(this, imageSources, image);
 
-      imgElement.onerror = this.onImageElementLoadError(imageSources, image);
+      imgElement.onerror = this.onImageElementLoadError.bind(this, imageSources, image);
     });
   }
 

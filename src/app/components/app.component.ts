@@ -17,11 +17,11 @@ export class AppComponent {
 
   // example config
   public config: ICarouselConfig = {
-    verifyBeforeLoad: true,
-    log: true,
+    verifyBeforeLoad: false,
+    log: false,
     animation: true,
-    animationType: AnimationConfig.SLIDE_OVERLAP,
+    animationType: AnimationConfig.APPEAR,
     autoplay: true,
-    autoplayDelay: 4000
+    autoplayDelay: 500
   };
 }

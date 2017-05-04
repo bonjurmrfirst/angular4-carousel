@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { ICarouselConfig, AnimationConfig } from "../services";
+import { ICarouselConfig, AnimationConfig } from '../services';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ export class AppComponent {
     'https://www.abamet.ru/images/press/haas/press-releases/2013/gaboi-rigoutat.jpg',
   ];
 
-  //example config
+  // example config
   public config: ICarouselConfig = {
     verifyBeforeLoad: true,
     log: true,

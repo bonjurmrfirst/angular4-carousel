@@ -1,0 +1,8 @@
+**/*.*
+
+!package.json
+
+!README.md
+!**/tsconfig.*
+!**/tslint.json
+!src/app/**/*.*

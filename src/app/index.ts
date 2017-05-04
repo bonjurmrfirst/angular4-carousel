@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 
 import { CarouselService } from './services';
 
+import { enableProdMode } from '@angular/core'; enableProdMode();
+
 import {
   AppComponent,
   CarouselComponent,

@@ -2,14 +2,37 @@ $_color: #0070ff;
 
 .carousel-nav-list {
   position: absolute;
+  left: 0;
+  right: 0;
   bottom: 0;
+  text-align: center;
 
   &__item {
     display: inline-block;
+    margin: 0 6px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.3;
+
+    &:hover {
+      border-color: #ffffff
+    }
+
+    &--active {
+      background-color: #ffffff
+    }
+
+    &:hover {
+      background-color: #ffffff
+    }
   }
 
   &__item--current {
-    background-color: $_color;
+    background-color: #ffffff;
+    opacity: 0.6;
   }
 
   &__item--disabled {

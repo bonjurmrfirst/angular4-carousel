@@ -1,17 +1,32 @@
 .carousel-nav {
-  position: absolute;
 }
 
 .carousel-nav__btn {
-  &--left {
+  position: absolute;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 10px;
+  top: 50%;
+  opacity: 0.5;
+  cursor: pointer;
 
+  &--left {
+    left: 30px;
+    transform: translateY(-50%) rotate(135deg) ;
   }
 
   &--right {
-
+    transform: rotate(-45deg) translateY(-50%);
+    right: 20px;
   }
 
   &--disabled {
     pointer-events: none;
+  }
+
+  &:hover {
+    border-color: #ffffff;
+    opacity: 1;
   }
 }

@@ -22,6 +22,6 @@ export class AppComponent {
     animation: true,
     animationType: AnimationConfig.SLIDE_OVERLAP,
     autoplay: true,
-    autoplayDelay: 1000
+    autoplayDelay: 4000
   };
 }

@@ -4,7 +4,7 @@ import { Directive, ElementRef, Input } from '@angular/core';
   selector: '[carouselDisableChildren]'
 })
 export class CarouselDisableChildrenDirective  {
-  private SLIDE_ANIMATION_TIME = 700;
+  private TOGGLE_CLASS_TIME = 700;
 
   @Input() carouselDisableChildren: string;
 
@@ -16,7 +16,7 @@ export class CarouselDisableChildrenDirective  {
     const toggleFunc = this.toggleClass.bind(this, btnElements, this.carouselDisableChildren);
 
     toggleFunc();
-    setTimeout(toggleFunc, this.SLIDE_ANIMATION_TIME);
+    setTimeout(toggleFunc, this.TOGGLE_CLASS_TIME);
   }
 
   private toggleClass(elements: HTMLElement[], className: string): void {

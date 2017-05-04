@@ -22,13 +22,13 @@ export class CarouselHandlerDirective implements OnInit {
 
   private animate(currentSlide: HTMLElement, nextSlide: HTMLElement, direction: string): void {
     if (!this.config.animation) {
-      this.toggleClass('test--hidden-initial', currentSlide, nextSlide);
+      this.toggleClass('slide--hidden-initial', currentSlide, nextSlide);
       return;
     }
 
     const animationType = this.config.animationType;
 
-    currentSlide.className = nextSlide.className = 'test';
+    currentSlide.className = nextSlide.className = 'slide';
     this.toggleClass(`slide--hidden-${animationType}-${direction}`, currentSlide);
     this.toggleClass(`slide--show-${animationType}-${direction}`, nextSlide);
   }

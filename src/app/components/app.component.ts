@@ -29,8 +29,8 @@ export class AppComponent {
   public config: ICarouselConfig = {
     verifyBeforeLoad: true,
     log: true,
-    animation: true,
-    animationType: AnimationConfig.SLIDE,
+    animation: false,
+    animationType: AnimationConfig.APPEAR,
     autoplay: true,
     autoplayDelay: 1000
   };

@@ -11,9 +11,11 @@ export class CarouselDisableChildrenDirective  {
   constructor(private el: ElementRef) {}
 
   disableChildren() {
+    //noinspection TypeScriptUnresolvedFunction
     let btnElements = Array.from(this.el.nativeElement.children);
 
     const toggleFunc = this.toggleClass.bind(this, btnElements, this.carouselDisableChildren);
+
 
     toggleFunc();
     setTimeout(toggleFunc, this.TOGGLE_CLASS_TIME);

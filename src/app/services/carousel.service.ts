@@ -43,38 +43,45 @@ export class CarouselService {
   }
 
   public getConfig(): ICarouselConfig {
-    //noinspection TypeScriptUnresolvedFunction
     return Object.assign({}, this.config);
   }
 
   private loadImages(imageSources: string[]): void {
     const emitIfAllImagesLoaded = (): void => {
-      if (this.imageLoadedCount === imageSources.length) {
-        this.imageLoad.complete();
-      }
+
     };
 
     imageSources.forEach(image => {
       const imgElement = document.createElement('img');
       imgElement.src = image;
 
-      imgElement.onload = () => {
-        this.imageLoadedCount++;
-        this.imageLoad.next(image);
+      imgElement.onload = this.onImageElementLoad(imageSources, image);
 
-        this.carouselTinyLogger(image, true);
-
-        emitIfAllImagesLoaded();
-      };
-
-      imgElement.onerror = () => {
-        imageSources.splice(imageSources.indexOf(image), 1);
-
-        emitIfAllImagesLoaded();
-
-        this.carouselTinyLogger(image, false);
-      };
+      imgElement.onerror = this.onImageElementLoadError(imageSources, image);
     });
+  }
+
+  private onImageElementLoad(imageSources: string[], image: string): any {
+    this.imageLoadedCount++;
+    this.imageLoad.next(image);
+
+    this.carouselTinyLogger(image, true);
+
+    this.emitIfAllImagesLoaded(imageSources);
+  }
+
+  private onImageElementLoadError(imageSources: string[], image: string): any {
+    imageSources.splice(imageSources.indexOf(image), 1);
+
+    this.emitIfAllImagesLoaded(imageSources);
+
+    this.carouselTinyLogger(image, false);
+  }
+
+  private emitIfAllImagesLoaded(imageSources: string[]) {
+    if (this.imageLoadedCount === imageSources.length) {
+      this.imageLoad.complete();
+    }
   }
 
   private carouselTinyLogger(image: string, isLoaded: boolean): void {

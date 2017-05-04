@@ -31,7 +31,8 @@ _component ts:_
     '[path to img2]',
     '[path to img3]'
   ];
-  public config: ICarouselConfig = {
+  `<br/>
+  `public config: ICarouselConfig = {
     verifyBeforeLoad: false,
     log: false,
     animation: true,

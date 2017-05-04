@@ -1,28 +1,67 @@
 # Angular4Carousel
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+Animated angular carousel
 
-## Development server
+###Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+http://angular4-carousel.bitballoon.com/
 
-## Code scaffolding
+## Getting started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+`npm i --save-dev angular4-carousel`
 
-## Build
+Add following lines into your
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+_module:_
 
-## Running unit tests
+`import { CarouselModule } from 'angular4-carousel';`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`imports: [CarouselModule]`
 
-## Running end-to-end tests
+_component template:_
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+`<carousel [sources]="imageSources" [config]="config"></carousel>`
 
-## Further help
+_component ts:_
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`import { ICarouselConfig, AnimationConfig } from 'angular4-carousel';`
+
+`public imageSources: string[] = [ 
+    '[path to img1]',
+    '[path to img2]',
+    '[path to img3]'
+  ];
+  public config: ICarouselConfig = {
+    verifyBeforeLoad: false,
+    log: false,
+    animation: true,
+    animationType: AnimationConfig.APPEAR,
+    autoplay: true,
+    autoplayDelay: 500
+  };`
+
+## Config
+
+_verifyBeforeLoad_ <br/>
+values: false, true <br/>
+If true, each image will render to view if and when load.
+If false, all images render as soon as carousel init.
+
+_log_: <br/>
+values: false, true <br/>
+Log to console on image load success or error
+
+_animation:_ <br/>
+values: false, true <br/>
+
+
+_animationType_: <br/>
+value: AnimationConfig.APPEAR, AnimationConfig.SLIDE_OVERLAP, AnimationConfig.SLIDE
+
+_autoplay:_<br/>
+values: false, true
+
+_autoplayDelay:_ <br/>
+values: [number]
+
+

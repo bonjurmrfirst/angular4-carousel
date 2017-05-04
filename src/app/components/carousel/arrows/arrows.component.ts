@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
 
-import { CarouselDisableChildrenDirective } from '../../../../../directives/disableChildren';
+import { CarouselDisableChildrenDirective } from '../../../directives';
 
 @Component({
   selector: 'carousel-arrows',

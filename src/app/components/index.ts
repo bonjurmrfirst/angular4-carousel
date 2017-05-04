@@ -1,15 +1,15 @@
 import { AppComponent } from './app.component';
 
 import {
-  CarouselRootComponent,
+  CarouselComponent,
   SlideComponent,
   CarouselArrowsComponent,
   PinsComponent
-} from './components';
+} from './carousel';
 
 export {
   AppComponent,
-  CarouselRootComponent,
+  CarouselComponent,
   SlideComponent,
   CarouselArrowsComponent,
   PinsComponent

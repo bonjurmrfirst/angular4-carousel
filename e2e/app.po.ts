@@ -6,6 +6,6 @@ export class Angular4CarouselPage {
   }
 
   getParagraphText() {
-    return element(by.css('carousel-root h1')).getText();
+    return element(by.css('carousel-carousel h1')).getText();
   }
 }

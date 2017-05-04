@@ -1,6 +1,6 @@
 import { Directive, OnInit, ElementRef } from '@angular/core';
 
-import { CarouselService, ICarouselConfig } from '../../services';
+import { CarouselService, ICarouselConfig } from '../services';
 
 @Directive({
   selector: '[appCarouselHandler]'
@@ -22,13 +22,13 @@ export class CarouselHandlerDirective implements OnInit {
 
   private animate(currentSlide: HTMLElement, nextSlide: HTMLElement, direction: string): void {
     if (!this.config.animation) {
-      this.toggleClass('slide--hidden-initial', currentSlide, nextSlide);
+      this.toggleClass('test--hidden-initial', currentSlide, nextSlide);
       return;
     }
 
     const animationType = this.config.animationType;
 
-    currentSlide.className = nextSlide.className = 'slide';
+    currentSlide.className = nextSlide.className = 'test';
     this.toggleClass(`slide--hidden-${animationType}-${direction}`, currentSlide);
     this.toggleClass(`slide--show-${animationType}-${direction}`, nextSlide);
   }

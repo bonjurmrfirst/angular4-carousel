@@ -1,14 +1,14 @@
 import { Component, OnInit, Input, ViewChild, forwardRef } from '@angular/core';
 
-import { CarouselService, ICarouselConfig } from '../../../services';
-import { CarouselHandlerDirective } from '../../../directives';
+import { CarouselService, ICarouselConfig } from '../../services';
+import { CarouselHandlerDirective } from '../../directives';
 
 @Component({
-  selector: 'carousel-root',
-  templateUrl: 'carousel-root.template.html',
-  styleUrls: ['assets/carousel-root.styles.scss']
+  selector: 'carousel',
+  templateUrl: 'carousel.template.html',
+  styleUrls: ['assets/carousel.styles.scss']
 })
-export class CarouselRootComponent implements OnInit {
+export class CarouselComponent implements OnInit {
   @Input() private sources: string[];
   @Input() private config: ICarouselConfig;
 
@@ -20,6 +20,7 @@ export class CarouselRootComponent implements OnInit {
   public currentSlide = 0;
 
   constructor(private carouselService: CarouselService) {
+    //noinspection TypeScriptUnresolvedFunction
     this.carouselService.onImageLoad().subscribe(
       (images) => this.loadedImages = this.loadedImages.concat(images)
     );

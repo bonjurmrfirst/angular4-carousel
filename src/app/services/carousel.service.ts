@@ -43,13 +43,11 @@ export class CarouselService {
   }
 
   public getConfig(): ICarouselConfig {
+    //noinspection TypeScriptUnresolvedFunction
     return Object.assign({}, this.config);
   }
 
   private loadImages(imageSources: string[]): void {
-    const emitIfAllImagesLoaded = (): void => {
-
-    };
 
     imageSources.forEach(image => {
       const imgElement = document.createElement('img');

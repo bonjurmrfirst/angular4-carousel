@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 
-import { CarouselDisableChildrenDirective } from '../../../../../directives/disableChildren';
+import { CarouselDisableChildrenDirective } from '../../../directives';
 
 @Component({
   selector: 'carousel-pins',
-  templateUrl: './pins.template.html',
-  styleUrls: ['./assets/pins.styles.scss']
+  templateUrl: 'pins.template.html',
+  styleUrls: ['assets/pins.styles.scss']
 })
 export class PinsComponent {
   @Input() images: string[];

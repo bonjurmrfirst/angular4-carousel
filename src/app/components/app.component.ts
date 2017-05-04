@@ -30,8 +30,8 @@ export class AppComponent {
     verifyBeforeLoad: true,
     log: true,
     animation: true,
-    animationType: AnimationConfig.SLIDE_OVERLAP,
+    animationType: AnimationConfig.SLIDE,
     autoplay: false,
-    autoplayDelay: 3000
+    autoplayDelay: 1000
   };
 }

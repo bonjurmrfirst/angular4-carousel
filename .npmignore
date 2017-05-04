@@ -6,3 +6,4 @@
 !**/tsconfig.*
 !**/tslint.json
 !src/app/**/*.*
+!index.ts

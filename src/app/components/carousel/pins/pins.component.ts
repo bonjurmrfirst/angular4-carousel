@@ -1,6 +1,4 @@
-import { Component, Input, Output, EventEmitter, ViewChild } from '@angular/core';
-
-import { CarouselDisableChildrenDirective } from '../../../directives';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'carousel-pins',
@@ -8,18 +6,20 @@ import { CarouselDisableChildrenDirective } from '../../../directives';
   styleUrls: ['assets/pins.styles.scss']
 })
 export class PinsComponent {
+  private DISABLE_ELEMENT_TIME = 700;
+  private disableElement: boolean;
+
   @Input() images: string[];
   @Input() currentSlide: number;
 
   @Output() changeSlide: EventEmitter<number> = new EventEmitter();
 
-  @ViewChild(CarouselDisableChildrenDirective)
-  public carouselDisableChildrenDirective: CarouselDisableChildrenDirective;
-
   constructor() { }
 
   public onChangeSlide(slideIndex): void {
     this.changeSlide.emit(slideIndex);
-    this.carouselDisableChildrenDirective.disableChildren();
+
+    this.disableElement = true;
+    setTimeout(() => this.disableElement = false, this.DISABLE_ELEMENT_TIME);
   }
 }

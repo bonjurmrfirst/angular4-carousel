@@ -1,6 +1,4 @@
-import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
-
-import { CarouselDisableChildrenDirective } from '../../../directives';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'carousel-arrows',
@@ -8,15 +6,17 @@ import { CarouselDisableChildrenDirective } from '../../../directives';
   styleUrls: ['assets/arrows.styles.scss']
 })
 export class CarouselArrowsComponent {
-  @Output() changeSlide: EventEmitter<string> = new EventEmitter();
+  private DISABLE_ELEMENT_TIME = 700;
+  private disableElement: boolean;
 
-  @ViewChild(CarouselDisableChildrenDirective)
-  public carouselDisableChildrenDirective: CarouselDisableChildrenDirective;
+  @Output() changeSlide: EventEmitter<string> = new EventEmitter();
 
   constructor() {}
 
   public onChangeSlide(direction: string): void {
     this.changeSlide.emit(direction);
-    this.carouselDisableChildrenDirective.disableChildren();
+
+    this.disableElement = true;
+    setTimeout(() => this.disableElement = false, this.DISABLE_ELEMENT_TIME);
   }
 }

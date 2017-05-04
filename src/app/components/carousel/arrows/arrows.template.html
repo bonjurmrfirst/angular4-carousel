@@ -1,4 +1,11 @@
-<div class="carousel-nav" [carouselDisableChildren]="'carousel-nav__btn--disabled'">
-  <button class="carousel-nav__btn carousel-nav__btn--left" (click)="onChangeSlide('prev')">Left</button>
-  <button class="carousel-nav__btn carousel-nav__btn--right" (click)="onChangeSlide('next')">Right</button>
+<div class="carousel-nav">
+  <button class="carousel-nav__btn carousel-nav__btn--left"
+          (click)="onChangeSlide('prev')"
+          [class.carousel-nav__btn--disabled]="disableElement">
+    Left
+  </button>
+  <button class="carousel-nav__btn carousel-nav__btn--right"
+          (click)="onChangeSlide('next')"
+          [class.carousel-nav__btn--disabled]="disableElement">
+    Right</button>
 </div>

@@ -1,8 +1,9 @@
-<ul class="carousel-nav-list" [carouselDisableChildren]="'carousel-nav-list__item--disabled'">
+<ul class="carousel-nav-list">
   <li class="carousel-nav-list__item"
       *ngFor="let counter of images; let i = index"
       (click)="onChangeSlide(i)"
-      [class.carousel-nav-list__item--current]="currentSlide === i">
+      [class.carousel-nav-list__item--current]="currentSlide === i"
+      [class.carousel-nav-list__item--disabled]="disableElement">
     {{i}}
   </li>
 </ul>

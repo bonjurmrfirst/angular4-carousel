@@ -27,7 +27,6 @@ export class CarouselHandlerDirective implements OnInit {
     }
 
     const animationType = this.config.animationType;
-
     currentSlide.className = nextSlide.className = 'slide';
     this.toggleClass(`slide--hidden-${animationType}-${direction}`, currentSlide);
     this.toggleClass(`slide--show-${animationType}-${direction}`, nextSlide);

@@ -33,12 +33,12 @@ _component ts:_
   `];`<br/>
   <br/>
   `public config: ICarouselConfig = {`<br/>
-    `verifyBeforeLoad: false,`<br/>
+    `verifyBeforeLoad: true,`<br/>
     `log: false,`<br/>
     `animation: true,`<br/>
     `animationType: AnimationConfig.APPEAR,`<br/>
     `autoplay: true,`<br/>
-    `autoplayDelay: 500`<br/>
+    `autoplayDelay: 2000`<br/>
   `};`
 
 ## Config

@@ -31,7 +31,7 @@ _component ts:_
     `'[img2 src]',`<br/>
     `'[img3 src]'`<br/>
   `];`<br/>
-  ``<br/>
+  <br/>
   `public config: ICarouselConfig = {`<br/>
     `verifyBeforeLoad: false,`<br/>
     `log: false,`<br/>

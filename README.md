@@ -26,20 +26,20 @@ _component ts:_
 
 `import { ICarouselConfig, AnimationConfig } from 'angular4-carousel';`
 
-`public imageSources: string[] = [ 
-    '[path to img1]',
-    '[path to img2]',
-    '[path to img3]'
-  ];
-  `<br/>
-  `public config: ICarouselConfig = {
-    verifyBeforeLoad: false,
-    log: false,
-    animation: true,
-    animationType: AnimationConfig.APPEAR,
-    autoplay: true,
-    autoplayDelay: 500
-  };`
+`public imageSources: string[] = [ `<br/>
+    `'[img1 src]',`<br/>
+    `'[img2 src]',`<br/>
+    `'[img3 src]'`<br/>
+  `];`<br/>
+  ``<br/>
+  `public config: ICarouselConfig = {`<br/>
+    `verifyBeforeLoad: false,`<br/>
+    `log: false,`<br/>
+    `animation: true,`<br/>
+    `animationType: AnimationConfig.APPEAR,`<br/>
+    `autoplay: true,`<br/>
+    `autoplayDelay: 500`<br/>
+  `};`
 
 ## Config
 

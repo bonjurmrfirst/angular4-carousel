@@ -65,4 +65,26 @@ values: false, true
 _autoplayDelay:_ <br/>
 values: [number]
 
+## API
+
+You can catch event on image loaded <br/>
+Add following lines into your component ts file:
+
+Import:
+`
+import { CarouselService } from 'angular4-carousel';
+`
+
+in constructor:
+
+`
+constructor (private x: CarouselService) {}
+`
+
+and use:<br/>
+`this.x.onImageLoad().subscribe(` <br/>
+      `   (src) => console.log(src + ' - loaded'),`<br/>
+      `   (src) => console.log(src + ' - error'),`<br/>
+      `   () => console.log('all imgs loaded')`<br/>
+    `)`<br/>
 

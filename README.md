@@ -41,6 +41,8 @@ _component ts:_
     `autoplayDelay: 2000`<br/>
   `};`
 
+Done.
+
 ## Config
 
 _verifyBeforeLoad_ <br/>

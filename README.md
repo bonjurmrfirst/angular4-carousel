@@ -12,20 +12,28 @@ http://angular4-carousel.bitballoon.com/
 
 Add following lines into your
 
-_module:_
+**module:**
 
-`import { CarouselModule } from 'angular4-carousel';`
+```
+import { CarouselModule } from 'angular4-carousel';
+```
 
 add carousel in your module imports section<br/>
-`imports: [CarouselModule]`
+```
+imports: [CarouselModule]
+```
 
 <br/>
-_component template:_
 
-`<carousel [sources]="imageSources" [config]="config"></carousel>`
+**component template:**
+
+```
+<carousel [sources]="imageSources" [config]="config"></carousel>
+```
 
 <br/>
-_component ts:_
+
+**component ts:**
  
 ```
 import { ICarouselConfig, AnimationConfig } from 'angular4-carousel';

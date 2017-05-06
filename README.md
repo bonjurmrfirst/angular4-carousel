@@ -16,31 +16,39 @@ _module:_
 
 `import { CarouselModule } from 'angular4-carousel';`
 
+add carousel in your module imports section<br/>
 `imports: [CarouselModule]`
 
+<br/>
 _component template:_
 
 `<carousel [sources]="imageSources" [config]="config"></carousel>`
 
+<br/>
 _component ts:_
+ 
+```
+import { ICarouselConfig, AnimationConfig } from 'angular4-carousel';
+```
 
-`import { ICarouselConfig, AnimationConfig } from 'angular4-carousel';`
-
-`public imageSources: string[] = [ `<br/>
-    ` 'path to img1',`<br/>
-    ` 'path to img2',`<br/>
-    ` 'path to img3'`<br/>
-  `];`<br/>
-  <br/>
-  `public config: ICarouselConfig = {`<br/>
-    ` verifyBeforeLoad: true,`<br/>
-    ` log: false,`<br/>
-    ` animation: true,`<br/>
-    ` animationType: AnimationConfig.APPEAR,`<br/>
-    ` autoplay: true,`<br/>
-    ` autoplayDelay: 2000`<br/>
-  `};`
-
+and add sources and config to component class
+```
+public imageSources: string[] = [
+     'path to img1',
+     'path to img2',
+     'path to img3'
+  ];
+  
+  public config: ICarouselConfig = {
+     verifyBeforeLoad: true,
+     log: false,
+     animation: true,
+     animationType: AnimationConfig.APPEAR,
+     autoplay: true,
+     autoplayDelay: 2000
+  };
+```
+  
 ## Config
 
 _verifyBeforeLoad_ <br/>
@@ -82,9 +90,11 @@ constructor (private x: CarouselService) {}
 `
 
 and use:<br/>
-`this.x.onImageLoad().subscribe(` <br/>
-      `   (src) => console.log(src + ' - loaded'),`<br/>
-      `   (src) => console.log(src + ' - error'),`<br/>
-      `   () => console.log('all imgs loaded')`<br/>
-    `)`<br/>
+```
+this.x.onImageLoad().subscribe(
+      (src) => console.log(src + ' - loaded'),
+      (src) => console.log(src + ' - error'),
+      () => console.log('all imgs loaded')
+    )
+```
 

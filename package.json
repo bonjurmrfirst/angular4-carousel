@@ -1,12 +1,12 @@
 {
   "name": "angular4-carousel",
   "description": "Configurable angular2/4 carousel",
-  "keywords": "Angular2, Angular4, carousel, image slider",
+  "keywords": ["Angular2", "Angular4", "carousel", "image slider"],
   "repository": {
     "type" : "git",
     "url" : "https://github.com/bonjurmrfirst/angular4-carousel"
   },
-  "version": "1.0.13",
+  "version": "1.0.14",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

@@ -1,8 +1,8 @@
 # Angular4Carousel
 
-Animated angular carousel
+Configurable angular carousel
 
-###Demo
+##Demo
 
 http://angular4-carousel.bitballoon.com/
 
@@ -40,8 +40,6 @@ _component ts:_
     `autoplay: true,`<br/>
     `autoplayDelay: 2000`<br/>
   `};`
-
-Done.
 
 ## Config
 

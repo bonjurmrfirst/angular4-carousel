@@ -41,15 +41,16 @@ export class CarouselService {
   }
 
   private loadImages(imageSources: string[]): void {
-
-    imageSources.forEach(image => {
+    const createImageElement = (image: string): void => {
       const imgElement = document.createElement('img');
       imgElement.src = image;
 
       imgElement.onload = this.onImageElementLoad.bind(this, imageSources, image);
 
       imgElement.onerror = this.onImageElementLoadError.bind(this, imageSources, image);
-    });
+    };
+
+    imageSources.forEach(createImageElement);
   }
 
   private onImageElementLoad(imageSources: string[], image: string): any {

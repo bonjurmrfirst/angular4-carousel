@@ -1,3 +1,32 @@
+.carousel-nav__clickable-area {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--left {
+    right: auto;
+    left: 0;
+
+    &:hover .carousel-nav__btn--left {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  &--right {
+    left: auto;
+    right: 0;
+
+    &:hover .carousel-nav__btn--right {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
 .carousel-nav__btn {
   position: absolute;
   top: 50%;

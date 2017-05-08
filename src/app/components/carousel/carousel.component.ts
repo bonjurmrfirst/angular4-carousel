@@ -38,8 +38,6 @@ export class CarouselComponent implements OnInit {
   }
 
   public onChangeSlide(direction: string, continueAutoplay?: boolean): void {
-    this.checkAutoplay(continueAutoplay);
-
     if (direction === 'prev') {
       this.currentSlide = this.currentSlide === 0 ? this.loadedImages.length - 1 : --this.currentSlide;
     } else {
@@ -49,8 +47,6 @@ export class CarouselComponent implements OnInit {
   }
 
   public onChangeSlideIndex(index: number, continueAutoplay?: boolean): void {
-    this.checkAutoplay(continueAutoplay);
-
     if (index === this.currentSlide) {
       return;
     }
@@ -61,10 +57,8 @@ export class CarouselComponent implements OnInit {
     this.carouselHandlerDirective.setNewSlide(this.currentSlide, direction);
   }
 
-  private checkAutoplay(continueAutoplay: boolean): void {
-    if (!continueAutoplay) {
-      clearInterval(this.autoplayIntervalId);
-    }
+  private onStopAutoplay(x): void {
+    clearInterval(this.autoplayIntervalId);
   }
 
   private startAutoplay(delay: number): void {

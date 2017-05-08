@@ -1,4 +1,4 @@
-import { Directive, OnInit, ElementRef } from '@angular/core';
+import { Directive, OnInit, ElementRef, Output, EventEmitter } from '@angular/core';
 
 import { CarouselService, ICarouselConfig } from '../services';
 
@@ -6,6 +6,8 @@ import { CarouselService, ICarouselConfig } from '../services';
   selector: '[appCarouselHandler]'
 })
 export class CarouselHandlerDirective implements OnInit {
+  @Output() public stopAutoplay: EventEmitter<boolean> = new EventEmitter();
+
   private config: ICarouselConfig;
   private currentSlide = 0;
 
@@ -40,5 +42,15 @@ export class CarouselHandlerDirective implements OnInit {
 
   ngOnInit() {
     this.config = this.carouselService.getConfig();
+
+    if (this.config.autoplay) {
+      this.autoplayHandler();
+    }
+  }
+
+  private autoplayHandler(): void {
+    this.el.nativeElement.addEventListener('mouseenter', () => {
+      this.stopAutoplay.emit();
+    });
   }
 }

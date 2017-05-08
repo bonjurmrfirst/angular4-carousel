@@ -1,4 +1,4 @@
-<div class="carousel-wrapper" appCarouselHandler>
+<div class="carousel-wrapper" appCarouselHandler (stopAutoplay)="onStopAutoplay()">
   <carousel-slide
        *ngFor="let img of loadedImages; let i = index"
        [src]="img"

@@ -2,7 +2,7 @@
 
 Configurable angular carousel
 
-##Demo
+## Demo
 
 http://angular4-carousel.bitballoon.com/
 
@@ -56,6 +56,12 @@ public imageSources: string[] = [
      autoplayDelay: 2000
   };
 ```
+  
+Add font awesome to your project.
+```
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+```
+(you can add font awesome using CLI or directly or CDN, or whatever you want, or redefine default styles for arrows ;) with pure CSS )
   
 ## Config
 

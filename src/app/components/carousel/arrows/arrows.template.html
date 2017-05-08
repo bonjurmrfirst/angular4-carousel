@@ -1,10 +1,10 @@
 <div class="carousel-nav">
-  <div class="carousel-nav__btn carousel-nav__btn--left"
-          (click)="onChangeSlide('prev')"
-          [class.carousel-nav__btn--disabled]="disableElement">
+  <div (click)="onChangeSlide('prev')"
+       [class.carousel-nav__btn--disabled]="disableElement">
+    <i class="fa fa-angle-left carousel-nav__btn carousel-nav__btn--left" aria-hidden="true"></i>
   </div>
-  <div class="carousel-nav__btn carousel-nav__btn--right"
-          (click)="onChangeSlide('next')"
-          [class.carousel-nav__btn--disabled]="disableElement">
+  <div (click)="onChangeSlide('next')"
+       [class.carousel-nav__btn--disabled]="disableElement">
+    <i class="fa fa-angle-right carousel-nav__btn carousel-nav__btn--right" aria-hidden="true"></i>
   </div>
 </div>

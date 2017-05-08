@@ -1,14 +1,82 @@
-.carousel-nav {
-}
-
 .carousel-nav__btn {
   position: absolute;
-  border: solid #ffffff;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 10px;
   top: 50%;
-  opacity: 0.5;
+  font-size: 46px;
+  transform: scaleX(0.8) translateY(-50%);
+  text-shadow: rgba(0, 0, 0, 0.8) 0 0 7px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &--left {
+    left: 15px;
+  }
+
+  &--right {
+    right: 15px;
+  }
+
+  &--disabled {
+    pointer-events: none;
+  }
+}
+
+/*.carousel-nav__btn {
+  position: absolute;
+  top: 50%;
+  height: 17px;
+  width: 15.5px;
+  border-right: 5px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &--left {
+    left: 20px;
+    transform: translateX(-50%) rotate(35deg);
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 17px;
+      width: 15.5px;
+      border-right: 5px solid #ffffff;
+      border-radius: 5px;
+      transform: rotate(-70deg);
+      top: 16px;
+      left: 13px;
+    }
+  }
+
+  &--right {
+    right: 0;
+    transform: translateX(-50%) rotate(-35deg);
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 17px;
+      width: 15.5px;
+      border-right: 5px solid #ffffff;
+      border-radius: 5px;
+      transform: rotate(70deg);
+      top: 2px;
+      left: -1px;
+    }
+  }
+}*/
+
+/*.carousel-nav__btn {
+  position: absolute;
+  border: solid #ffffff;
+  border-width: 0 5px 5px 0;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 7.5px;
+  top: 50%;
+  opacity: 0.6;
   cursor: pointer;
 
   &--left {
@@ -29,4 +97,4 @@
     border-color: #ffffff;
     opacity: 1;
   }
-}
+}*/

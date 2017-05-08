@@ -10,15 +10,16 @@ $_color: #0070ff;
   &__item {
     display: inline-block;
     margin: 0 6px;
-    width: 10px;
-    height: 10px;
-    border: 1px solid #ffffff;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
+    background-color: #ffffff;
     cursor: pointer;
-    opacity: 0.3;
+    opacity: 0.6;
 
     &:hover {
-      border-color: #ffffff
+      border-color: #ffffff;
+      opacity: 0.9;
     }
 
     &--active {
@@ -32,7 +33,7 @@ $_color: #0070ff;
 
   &__item--current {
     background-color: #ffffff;
-    opacity: 0.6;
+    opacity: 1;
   }
 
   &__item--disabled {

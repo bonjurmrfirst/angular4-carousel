@@ -57,7 +57,7 @@ export class CarouselComponent implements OnInit {
     this.carouselHandlerDirective.setNewSlide(this.currentSlide, direction);
   }
 
-  private onStopAutoplay(): void {
+  public onStopAutoplay(): void {
     clearInterval(this.autoplayIntervalId);
   }
 

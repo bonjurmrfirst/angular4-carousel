@@ -77,6 +77,10 @@ export class CarouselService {
   }
 
   private carouselTinyLogger(image: string, isLoaded: boolean): void {
+    if (!this.config.log) {
+      return;
+    }
+
     if (isLoaded) {
       console.log(`Carousel module: image loaded: ${image}`);
       return;

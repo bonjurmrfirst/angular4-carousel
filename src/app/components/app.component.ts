@@ -20,7 +20,7 @@ export class AppComponent {
     verifyBeforeLoad: false,
     log: false,
     animation: true,
-    animationType: AnimationConfig.APPEAR,
+    animationType: AnimationConfig.SLIDE,
     autoplay: true,
     autoplayDelay: 500
   };

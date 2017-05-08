@@ -1,3 +1,5 @@
+$color-red: #e55342;
+
 .carousel-nav-list {
   position: absolute;
   left: 0;
@@ -16,21 +18,16 @@
     opacity: 0.6;
 
     &:hover {
-      border-color: #ffffff;
       opacity: 0.9;
     }
 
     &--active {
-      background-color: #ffffff;
-    }
-
-    &:hover {
-      background-color: #ffffff
+      opacity: 0.9;
     }
   }
 
   &__item--current {
-    background-color: #ffffff;
+    background-color: $color-red;
     opacity: 1;
   }
 

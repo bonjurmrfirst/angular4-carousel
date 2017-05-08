@@ -37,7 +37,7 @@ describe('ArrowsComponent', () => {
 
     it('should emit event that slide is changing', () => {
       let isChanging = false;
-      let chSlide = component.changeSlide.subscribe((event) => isChanging = !isChanging);
+      const chSlide = component.changeSlide.subscribe((event) => isChanging = !isChanging);
 
       component.onChangeSlide('next');
 
@@ -46,7 +46,7 @@ describe('ArrowsComponent', () => {
 
     it('should emit event with direction', () => {
       let isChanging;
-      let chSlide = component.changeSlide.subscribe((event) => isChanging = event);
+      const chSlide = component.changeSlide.subscribe((event) => isChanging = event);
 
       component.onChangeSlide('next');
 

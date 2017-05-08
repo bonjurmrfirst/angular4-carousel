@@ -40,7 +40,7 @@ describe('CarouselComponent', () => {
     };
 
     (component as any).carouselHandlerDirective = {
-      setNewSlide: ()=>{}
+      setNewSlide: () => {}
     };
 
     fixture.detectChanges();
@@ -89,28 +89,12 @@ describe('CarouselComponent', () => {
       expect(component.currentSlide).toEqual(currentSlide + 1);
     });
 
-    it('should invoke function that checks if autoplay is should be disabled', () => {
-      let spy = spyOn(component, 'checkAutoplay');
-
-      component.onChangeSlide('next');
-
-      expect(spy).toHaveBeenCalled();
-    });
-
     it('should set slide by index', () => {
       let currentSlide = component.currentSlide;
 
       component.onChangeSlideIndex(2);
 
       expect(component.currentSlide).toEqual(2);
-    });
-
-    it('should (if need to set slide by index) invoke function that checks if autoplay is should be disabled', () => {
-      let spy = spyOn(component, 'checkAutoplay');
-
-      component.onChangeSlideIndex(1);
-
-      expect(spy).toHaveBeenCalled();
     });
 
     it('should set slide by index and do nothing if current slide === new slide index', () => {

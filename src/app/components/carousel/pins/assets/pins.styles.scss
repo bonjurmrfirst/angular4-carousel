@@ -1,5 +1,3 @@
-$_color: #0070ff;
-
 .carousel-nav-list {
   position: absolute;
   left: 0;
@@ -23,7 +21,7 @@ $_color: #0070ff;
     }
 
     &--active {
-      background-color: #ffffff
+      background-color: #ffffff;
     }
 
     &:hover {

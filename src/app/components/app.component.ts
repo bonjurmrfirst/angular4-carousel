@@ -22,6 +22,6 @@ export class AppComponent {
     animation: true,
     animationType: AnimationConfig.SLIDE,
     autoplay: true,
-    autoplayDelay: 500
+    autoplayDelay: 3000
   };
 }

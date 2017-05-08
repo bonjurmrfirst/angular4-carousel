@@ -23,7 +23,7 @@
 
   @keyframes next {
     0% {
-      left: 100%;
+      left: 99%;
     }
 
     100% {
@@ -33,7 +33,7 @@
 
   @keyframes prev {
     0% {
-      left: -100%;
+      left: -99%;
     }
 
     100% {
@@ -63,7 +63,7 @@
 
   @keyframes next-overlap {
     0% {
-      left: 100%;
+      left: 99%;
     }
 
     100% {
@@ -73,7 +73,7 @@
 
   @keyframes prev-overlap {
     0% {
-      left: -100%;
+      left: -99%;
     }
 
     100% {

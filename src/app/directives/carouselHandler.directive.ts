@@ -6,7 +6,7 @@ import { CarouselService, ICarouselConfig } from '../services';
   selector: '[appCarouselHandler]'
 })
 export class CarouselHandlerDirective implements OnInit {
-  @Output() public stopAutoplay: EventEmitter<boolean> = new EventEmitter();
+  @Output() public handleAutoplay: EventEmitter<boolean> = new EventEmitter();
 
   private config: ICarouselConfig;
   private currentSlide = 0;
@@ -50,7 +50,15 @@ export class CarouselHandlerDirective implements OnInit {
 
   private autoplayHandler(): void {
     this.el.nativeElement.addEventListener('mouseenter', () => {
-      this.stopAutoplay.emit();
+      this.handleAutoplay.emit(true);
+    });
+
+    this.el.nativeElement.addEventListener('mouseleave', () => {
+      this.handleAutoplay.emit(false);
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      this.handleAutoplay.emit(document.hidden);
     });
   }
 }

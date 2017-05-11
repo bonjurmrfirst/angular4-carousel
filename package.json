@@ -6,7 +6,7 @@
     "type" : "git",
     "url" : "https://github.com/bonjurmrfirst/angular4-carousel"
   },
-  "version": "2.2.3",
+  "version": "2.2.4",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

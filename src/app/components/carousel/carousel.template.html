@@ -6,11 +6,11 @@
        [isHidden]="i !== 0">
   </carousel-slide>
 
-  <carousel-arrows (changeSlide)="onChangeSlide($event);"></carousel-arrows>
-
   <carousel-pins
     [images]="loadedImages"
     [currentSlide]="currentSlide"
     (changeSlide)="onChangeSlideIndex($event);">
   </carousel-pins>
+
+  <carousel-arrows (changeSlide)="onChangeSlide($event);"></carousel-arrows>
 </div>

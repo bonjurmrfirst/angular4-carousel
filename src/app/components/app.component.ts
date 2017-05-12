@@ -22,6 +22,7 @@ export class AppComponent {
     animation: true,
     animationType: AnimationConfig.SLIDE,
     autoplay: true,
-    autoplayDelay: 3000
+    autoplayDelay: 3000,
+    stopAutoplayMinWidth: 768
   };
 }

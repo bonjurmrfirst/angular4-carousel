@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild, forwardRef } from '@angular/core';
 
-import { CarouselService, ICarouselConfig } from '../../services';
+import { CarouselService, ICarouselConfig, WindowWidthService } from '../../services';
 import { CarouselHandlerDirective } from '../../directives';
 
 @Component({
@@ -15,11 +15,12 @@ export class CarouselComponent implements OnInit {
   @ViewChild(forwardRef(() => CarouselHandlerDirective)) private carouselHandlerDirective: CarouselHandlerDirective;
 
   private autoplayIntervalId;
+  private preventAutoplay: boolean;
 
   public loadedImages: string[];
   public currentSlide = 0;
 
-  constructor(private carouselService: CarouselService) {
+  constructor(private carouselService: CarouselService, private windowWidthService: WindowWidthService) {
     //noinspection TypeScriptUnresolvedFunction
     this.carouselService.onImageLoad().subscribe(
       (images) => this.loadedImages = this.loadedImages.concat(images)
@@ -33,7 +34,14 @@ export class CarouselComponent implements OnInit {
     this.carouselService.init(showWhenLoad, this.config);
 
     if (this.config.autoplay) {
-      this.startAutoplay(this.config.autoplayDelay);
+      const minWidth = this.config.stopAutoplayMinWidth;
+
+      this.windowWidthService.onResize(minWidth, true).subscribe(
+        (isMinWidth) => {
+          this.preventAutoplay = !isMinWidth;
+          this.onHandleAutoplay(!this.config.autoplay)
+        }
+      );
     }
   }
 
@@ -58,7 +66,7 @@ export class CarouselComponent implements OnInit {
   }
 
   public onHandleAutoplay(stopAutoplay): void {
-    if (stopAutoplay) {
+    if (stopAutoplay || this.preventAutoplay) {
       clearInterval(this.autoplayIntervalId);
       return;
     }

@@ -7,4 +7,5 @@ export interface ICarouselConfig {
   animationType: AnimationConfig;
   autoplay: boolean;
   autoplayDelay: number;
+  stopAutoplayMinWidth: number;
 }

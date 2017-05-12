@@ -17,7 +17,8 @@ describe('CarouselService', () => {
     animation: true,
     animationType: AnimationConfig.APPEAR,
     autoplay: true,
-    autoplayDelay: 500
+    autoplayDelay: 500,
+    stopAutoplayMinWidth: 768
   };
 
   beforeEach(() => {

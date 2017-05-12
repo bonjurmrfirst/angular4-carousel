@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CarouselService } from './services';
+import { CarouselService, WindowWidthService } from './services';
 
 import { enableProdMode } from '@angular/core'; enableProdMode();
 
@@ -30,7 +30,7 @@ import { CarouselHandlerDirective } from './directives';
     BrowserModule
   ],
   exports: [CarouselComponent],
-  providers: [CarouselService],
+  providers: [CarouselService, WindowWidthService],
   bootstrap: [AppComponent]
 })
 export class CarouselModule { }

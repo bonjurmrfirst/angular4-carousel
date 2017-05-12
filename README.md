@@ -8,7 +8,7 @@ http://angular4-carousel.bitballoon.com/
 
 ## Getting started
 
-`npm i --save-dev angular4-carousel`
+`npm i --save angular4-carousel`
 
 Add following lines into your
 

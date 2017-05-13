@@ -14,8 +14,8 @@ export class CarouselHandlerDirective implements OnInit {
   constructor(private el: ElementRef, private carouselService: CarouselService) {}
 
   public setNewSlide(newSlide: number, direction: string): void {
-    const currentSlide = this.el.nativeElement.querySelector(`[data-slide="${this.currentSlide}"`);
-    const nextSlide = this.el.nativeElement.querySelector(`[data-slide="${newSlide}"`);
+    const currentSlide = this.el.nativeElement.querySelector(`[data-slide="${this.currentSlide}"]`);
+    const nextSlide = this.el.nativeElement.querySelector(`[data-slide="${newSlide}"]`);
 
     this.animate(currentSlide, nextSlide, direction);
 

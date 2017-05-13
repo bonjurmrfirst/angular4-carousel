@@ -16,6 +16,10 @@ export class CarouselArrowsComponent {
   public onChangeSlide(direction: string): void {
     this.changeSlide.emit(direction);
 
+    this.disableNavButtons();
+  }
+
+  public disableNavButtons(): void {
     this.disableElement = true;
     setTimeout(() => this.disableElement = false, this.DISABLE_ELEMENT_TIME);
   }

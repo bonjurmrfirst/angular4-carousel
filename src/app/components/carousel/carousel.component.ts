@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, ViewChild, forwardRef } from '@angular/core';
 
 import { CarouselService, ICarouselConfig, WindowWidthService } from '../../services';
+
+import { PinsComponent } from './pins';
+import { CarouselArrowsComponent } from './arrows';
 import { CarouselHandlerDirective } from '../../directives';
 
 @Component({
@@ -13,6 +16,8 @@ export class CarouselComponent implements OnInit {
   @Input() private config: ICarouselConfig;
 
   @ViewChild(forwardRef(() => CarouselHandlerDirective)) private carouselHandlerDirective: CarouselHandlerDirective;
+  @ViewChild(CarouselArrowsComponent) carouselArrowsComponent: CarouselArrowsComponent;
+  @ViewChild(PinsComponent) pinsComponent: PinsComponent;
 
   private autoplayIntervalId;
   private preventAutoplay: boolean;
@@ -77,6 +82,8 @@ export class CarouselComponent implements OnInit {
   private startAutoplay(delay: number): void {
     this.autoplayIntervalId = setInterval(() => {
       this.onChangeSlide('next');
+      this.pinsComponent.disableNavButtons();
+      this.carouselArrowsComponent.disableNavButtons();
     }, delay);
   }
 }

@@ -19,6 +19,10 @@ export class PinsComponent {
   public onChangeSlide(slideIndex): void {
     this.changeSlide.emit(slideIndex);
 
+    this.disableNavButtons();
+  }
+
+  public disableNavButtons(): void {
     this.disableElement = true;
     setTimeout(() => this.disableElement = false, this.DISABLE_ELEMENT_TIME);
   }

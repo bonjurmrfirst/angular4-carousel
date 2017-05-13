@@ -48,12 +48,13 @@ public imageSources: string[] = [
   ];
   
   public config: ICarouselConfig = {
-     verifyBeforeLoad: true,
-     log: false,
-     animation: true,
-     animationType: AnimationConfig.APPEAR,
-     autoplay: true,
-     autoplayDelay: 2000
+    verifyBeforeLoad: true,
+    log: false,
+    animation: true,
+    animationType: AnimationConfig.SLIDE,
+    autoplay: true,
+    autoplayDelay: 2000,
+    stopAutoplayMinWidth: 768
   };
 ```
   

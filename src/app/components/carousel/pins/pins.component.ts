@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['assets/pins.styles.scss']
 })
 export class PinsComponent {
-  private DISABLE_ELEMENT_TIME = 700;
+  private DISABLE_ELEMENT_TIME = 750;
   private disableElement: boolean;
 
   @Input() images: string[];

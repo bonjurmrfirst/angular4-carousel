@@ -6,7 +6,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['assets/arrows.styles.scss']
 })
 export class CarouselArrowsComponent {
-  private DISABLE_ELEMENT_TIME = 700;
+  private DISABLE_ELEMENT_TIME = 750;
   public disableElement: boolean;
 
   @Output() changeSlide: EventEmitter<string> = new EventEmitter();

@@ -23,6 +23,6 @@ export class WindowWidthService {
   private assertSize(scrollBar?: boolean): boolean {
     const area = scrollBar ? window.innerWidth : document.documentElement.clientWidth;
 
-    return this.minWidthBreakpoint <= area ? true : false;
+    return this.minWidthBreakpoint <= area;
   }
 }

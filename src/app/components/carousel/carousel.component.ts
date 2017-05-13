@@ -44,7 +44,7 @@ export class CarouselComponent implements OnInit {
       this.windowWidthService.onResize(minWidth, true).subscribe(
         (isMinWidth) => {
           this.preventAutoplay = !isMinWidth;
-          this.onHandleAutoplay(!this.config.autoplay)
+          this.onHandleAutoplay(!this.config.autoplay);
         }
       );
     }

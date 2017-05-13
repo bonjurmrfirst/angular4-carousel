@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppComponent, CarouselComponent } from '../';
-import { CarouselService } from '../../services'
+import { CarouselService, WindowWidthService } from '../../services';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -11,7 +11,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AppComponent, CarouselComponent ],
-      providers: [CarouselService],
+      providers: [CarouselService, WindowWidthService],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();

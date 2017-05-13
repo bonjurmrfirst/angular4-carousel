@@ -38,7 +38,7 @@ describe('CarouselService', () => {
     it('should load images via document.createElement', inject([CarouselService], (service: CarouselService) => {
       service.init(imageSources, config);
 
-      let spy = spyOn(document, 'createElement').and.callThrough();
+      const spy = spyOn(document, 'createElement').and.callThrough();
 
       (service as any).loadImages(imageSources);
 
@@ -63,27 +63,27 @@ describe('CarouselService', () => {
 
       (service as any).onImageElementLoad(['imgSrc'], 'loadedImgSrc');
 
-      onImageLoad.subscribe((src)=> {
-        expect(src).toBe('http://www.violinshoptampa.com/Violin%20Shop%20Tampa-15.jpg')
+      onImageLoad.subscribe((src) => {
+        expect(src).toBe('http://www.violinshoptampa.com/Violin%20Shop%20Tampa-15.jpg');
       });
     }));
 
     it('should invoke logger', inject([CarouselService], (service: CarouselService) => {
-      let spy = spyOn(service, 'carouselTinyLogger');
+      const spy = spyOn(service, 'carouselTinyLogger');
 
       service.init(imageSources, config);
       (service as any).onImageElementLoad(['imgSrc'], 'loadedImgSrc');
 
-      expect(spy).toHaveBeenCalled()
+      expect(spy).toHaveBeenCalled();
     }));
 
     it('should invoke function checks if all images is load', inject([CarouselService], (service: CarouselService) => {
-      let spy = spyOn(service, 'emitIfAllImagesLoaded');
+      const spy = spyOn(service, 'emitIfAllImagesLoaded');
 
       service.init(imageSources, config);
       (service as any).onImageElementLoad(['imgSrc'], 'loadedImgSrc');
 
-      expect(spy).toHaveBeenCalled()
+      expect(spy).toHaveBeenCalled();
     }));
 
   });
@@ -99,21 +99,21 @@ describe('CarouselService', () => {
     }));
 
     it('should invoke logger', inject([CarouselService], (service: CarouselService) => {
-      let spy = spyOn(service, 'carouselTinyLogger');
+      const spy = spyOn(service, 'carouselTinyLogger');
 
       service.init(imageSources, config);
       (service as any).onImageElementLoadError(['imgSrc'], 'loadedImgSrc');
 
-      expect(spy).toHaveBeenCalled()
+      expect(spy).toHaveBeenCalled();
     }));
 
     it('should invoke function checks if all images is load', inject([CarouselService], (service: CarouselService) => {
-      let spy = spyOn(service, 'emitIfAllImagesLoaded');
+      const spy = spyOn(service, 'emitIfAllImagesLoaded');
 
       service.init(imageSources, config);
       (service as any).onImageElementLoadError(['imgSrc'], 'loadedImgSrc');
 
-      expect(spy).toHaveBeenCalled()
+      expect(spy).toHaveBeenCalled();
     }));
 
   });
@@ -127,13 +127,14 @@ describe('CarouselService', () => {
       expect((service as any).config.autoplayDelay).toBe(1000);
     }));
 
-    it('should return all images as loaded if config includes verifyBeforeLoad -> false', inject([CarouselService], (service: CarouselService) => {
+    it('should return all images as loaded if config includes verifyBeforeLoad -> false',
+      inject([CarouselService], (service: CarouselService) => {
       const onImageLoad = service.onImageLoad();
 
       service.init(imageSources, config) ;
 
-      onImageLoad.subscribe(()=> {
-        expect(true).toBeTruthy()
+      onImageLoad.subscribe(() => {
+        expect(true).toBeTruthy();
       });
     }));
 

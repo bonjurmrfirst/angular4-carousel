@@ -28,7 +28,7 @@ describe('PinsComponent', () => {
     });
 
     it('should be equal 700 ms', () => {
-      expect((component as any).DISABLE_ELEMENT_TIME).toEqual(700);
+      expect((component as any).DISABLE_ELEMENT_TIME).toEqual(750);
     });
 
   });
@@ -37,7 +37,7 @@ describe('PinsComponent', () => {
 
     it('should emit event that slide is changing', () => {
       let isChanging = false;
-      let chSlide = component.changeSlide.subscribe((event) => isChanging = !isChanging);
+      const chSlide = component.changeSlide.subscribe((event) => isChanging = !isChanging);
 
       component.onChangeSlide('next');
 
@@ -46,7 +46,7 @@ describe('PinsComponent', () => {
 
     it('should emit event with new slide', () => {
       let isChanging;
-      let chSlide = component.changeSlide.subscribe((event) => isChanging = event);
+      const chSlide = component.changeSlide.subscribe((event) => isChanging = event);
 
       component.onChangeSlide(3);
 
@@ -54,7 +54,7 @@ describe('PinsComponent', () => {
     });
 
     it('should be equal 700 ms', () => {
-      expect((component as any).DISABLE_ELEMENT_TIME).toEqual(700);
+      expect((component as any).DISABLE_ELEMENT_TIME).toEqual(750);
     });
 
   });

@@ -28,7 +28,7 @@ describe('ArrowsComponent', () => {
     });
 
     it('should be equal 700 ms', () => {
-      expect((component as any).DISABLE_ELEMENT_TIME).toEqual(700);
+      expect((component as any).DISABLE_ELEMENT_TIME).toEqual(750);
     });
 
   });
@@ -54,7 +54,7 @@ describe('ArrowsComponent', () => {
     });
 
     it('should be equal 700 ms', () => {
-      expect((component as any).DISABLE_ELEMENT_TIME).toEqual(700);
+      expect((component as any).DISABLE_ELEMENT_TIME).toEqual(750);
     });
 
   });

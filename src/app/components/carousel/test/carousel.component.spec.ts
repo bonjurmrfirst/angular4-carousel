@@ -2,9 +2,11 @@ import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing'
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { CarouselComponent } from '../';
-import {Observable, Subject} from "rxjs";
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 import { CarouselService } from '../../../services/carousel.service';
+import { WindowWidthService } from '../../../services/window-width.service';
 import { ICarouselConfig, AnimationConfig } from '../../../services/';
 
 describe('CarouselComponent', () => {
@@ -14,7 +16,7 @@ describe('CarouselComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CarouselComponent ],
-      providers: [CarouselService],
+      providers: [CarouselService, WindowWidthService],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();
@@ -65,16 +67,6 @@ describe('CarouselComponent', () => {
 
         expect(spy).toHaveBeenCalled();
       }));
-
-
-    it('should start autoplay if config.autoplay is true', inject([CarouselService], (carouselService: CarouselService) => {
-      const spy = spyOn(component, 'startAutoplay');
-
-      component.ngOnInit();
-
-      expect(spy).toHaveBeenCalled();
-    }));
-
   });
 
   describe('slide handler', () => {
@@ -82,7 +74,7 @@ describe('CarouselComponent', () => {
     it('should set next slide if direction is "next"', () => {
       component.loadedImages = ['1', '2', '3'];
 
-      let currentSlide = component.currentSlide;
+      const currentSlide = component.currentSlide;
 
       component.onChangeSlide('next');
 
@@ -90,7 +82,7 @@ describe('CarouselComponent', () => {
     });
 
     it('should set slide by index', () => {
-      let currentSlide = component.currentSlide;
+      const currentSlide = component.currentSlide;
 
       component.onChangeSlideIndex(2);
 
@@ -98,7 +90,7 @@ describe('CarouselComponent', () => {
     });
 
     it('should set slide by index and do nothing if current slide === new slide index', () => {
-      let currentSlide = component.currentSlide;
+      const currentSlide = component.currentSlide;
 
       component.onChangeSlideIndex(0);
 

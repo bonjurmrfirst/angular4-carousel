@@ -98,6 +98,10 @@ export class CarouselComponent implements OnInit {
   }
 
   private disableCarouselNavBtns(): void {
+    if (!this.config.animation) {
+      return;
+    }
+
     this.carouselArrowsComponent.disableNavButtons();
     this.pinsComponent.disableNavButtons();
   }

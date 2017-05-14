@@ -56,8 +56,8 @@ describe('CarouselComponent', () => {
 
   describe('on init', () => {
 
-      it('should add first image as loaded image', () => {
-        expect(component.loadedImages.length).toEqual(1);
+      it('should add all imgs as loaded imgs', () => {
+        expect(component.loadedImages.length).toEqual(4);
       });
 
       it('should init service', inject([CarouselService], (carouselService: CarouselService) => {

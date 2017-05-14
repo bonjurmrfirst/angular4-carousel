@@ -36,7 +36,6 @@ export class CarouselService {
   }
 
   public getConfig(): ICarouselConfig {
-    //noinspection TypeScriptUnresolvedFunction
     return Object.assign({}, this.config);
   }
 

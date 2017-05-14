@@ -18,8 +18,6 @@ export class PinsComponent {
 
   public onChangeSlide(slideIndex): void {
     this.changeSlide.emit(slideIndex);
-
-    this.disableNavButtons();
   }
 
   public disableNavButtons(): void {

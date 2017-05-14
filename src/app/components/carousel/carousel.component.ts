@@ -16,26 +16,32 @@ export class CarouselComponent implements OnInit {
   @Input() private config: ICarouselConfig;
 
   @ViewChild(forwardRef(() => CarouselHandlerDirective)) private carouselHandlerDirective: CarouselHandlerDirective;
-  @ViewChild(CarouselArrowsComponent) carouselArrowsComponent: CarouselArrowsComponent;
-  @ViewChild(PinsComponent) pinsComponent: PinsComponent;
+  @ViewChild(CarouselArrowsComponent) private carouselArrowsComponent: CarouselArrowsComponent;
+  @ViewChild(PinsComponent) private pinsComponent: PinsComponent;
 
   private autoplayIntervalId;
   private preventAutoplay: boolean;
 
   public loadedImages: string[];
+  public galleryLength: number;
   public currentSlide = 0;
 
   constructor(private carouselService: CarouselService, private windowWidthService: WindowWidthService) {
-    //noinspection TypeScriptUnresolvedFunction
     this.carouselService.onImageLoad().subscribe(
       (images) => this.loadedImages = this.loadedImages.concat(images)
     );
   }
 
   ngOnInit() {
-    const [showImmediate, ...showWhenLoad] = this.sources;
+    this.galleryLength = this.sources.length;
 
+    const [showImmediate, ...showWhenLoad] = this.sources;
     this.loadedImages = [showImmediate];
+
+    if (this.galleryLength < 2) {
+      return;
+    }
+
     this.carouselService.init(showWhenLoad, this.config);
 
     if (this.config.autoplay) {
@@ -57,6 +63,7 @@ export class CarouselComponent implements OnInit {
       this.currentSlide = this.currentSlide === this.loadedImages.length - 1 ? 0 : ++this.currentSlide;
     }
     this.carouselHandlerDirective.setNewSlide(this.currentSlide, direction);
+    this.disableCarouselNavBtns();
   }
 
   public onChangeSlideIndex(index: number): void {
@@ -68,6 +75,7 @@ export class CarouselComponent implements OnInit {
 
     this.currentSlide = index;
     this.carouselHandlerDirective.setNewSlide(this.currentSlide, direction);
+    this.disableCarouselNavBtns();
   }
 
   public onHandleAutoplay(stopAutoplay): void {
@@ -85,5 +93,10 @@ export class CarouselComponent implements OnInit {
       this.pinsComponent.disableNavButtons();
       this.carouselArrowsComponent.disableNavButtons();
     }, delay);
+  }
+
+  private disableCarouselNavBtns(): void {
+    this.carouselArrowsComponent.disableNavButtons();
+    this.pinsComponent.disableNavButtons();
   }
 }

@@ -12,7 +12,7 @@ export class AppComponent {
     'http://www.violinshoptampa.com/Violin%20Shop%20Tampa-15.jpg',
     'http://gomighty.com/wp-content/themes/gomighty/lib/goal_images/files/SMusicPianoAntiqueshutterstock_-1920.jpg',
     'https://d1llvcsapfiksz.cloudfront.net/vendors/samplephonics/deep-sax/images/DeepSax_mobile.jpg',
-    'https://www.abamet.ru/images/press/haas/press-releases/2013/gaboi-rigoutat.jpg',
+    'https://www.abamet.ru/images/press/haas/press-releases/2013/gaboi-rigoutat.jpg'
   ];
 
   // example config

@@ -15,8 +15,6 @@ export class CarouselArrowsComponent {
 
   public onChangeSlide(direction: string): void {
     this.changeSlide.emit(direction);
-
-    this.disableNavButtons();
   }
 
   public disableNavButtons(): void {

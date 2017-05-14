@@ -7,10 +7,13 @@
   </carousel-slide>
 
   <carousel-pins
+    *ngIf="galleryLength > 1"
     [images]="loadedImages"
     [currentSlide]="currentSlide"
     (changeSlide)="onChangeSlideIndex($event);">
   </carousel-pins>
 
-  <carousel-arrows (changeSlide)="onChangeSlide($event);"></carousel-arrows>
+  <carousel-arrows
+    *ngIf="galleryLength > 1"
+    (changeSlide)="onChangeSlide($event);"></carousel-arrows>
 </div>

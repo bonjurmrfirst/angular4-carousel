@@ -22,12 +22,6 @@ export class CarouselService {
 
     this.config = config;
 
-    if (config.verifyBeforeLoad) {
-      this.imageLoad.next(imageSources);
-      this.imageLoad.complete();
-      return;
-    }
-
     this.loadImages(imageSources);
   }
 

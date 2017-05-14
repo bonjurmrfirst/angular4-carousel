@@ -18,7 +18,7 @@ export class AppComponent {
   // example config
   public config: ICarouselConfig = {
     verifyBeforeLoad: true,
-    log: false,
+    log: true,
     animation: true,
     animationType: AnimationConfig.SLIDE,
     autoplay: true,

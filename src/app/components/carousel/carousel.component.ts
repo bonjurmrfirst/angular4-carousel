@@ -36,13 +36,15 @@ export class CarouselComponent implements OnInit {
     this.galleryLength = this.sources.length;
 
     const [showImmediate, ...showWhenLoad] = this.sources;
-    this.loadedImages = [showImmediate];
+    this.loadedImages = this.config.verifyBeforeLoad ? [showImmediate] : this.sources;
 
     if (this.galleryLength < 2) {
       return;
     }
 
-    this.carouselService.init(showWhenLoad, this.config);
+    if (this.config.verifyBeforeLoad) {
+      this.carouselService.init(showWhenLoad, this.config);
+    }
 
     if (this.config.autoplay) {
       const minWidth = this.config.stopAutoplayMinWidth;

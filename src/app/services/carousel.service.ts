@@ -12,7 +12,7 @@ import {
 export class CarouselService {
   private imageLoadedCount = 0;
 
-  private imageLoad = new Subject<string | string[]>();
+  private imageLoad = new Subject<string>();
   private config: ICarouselConfig;
 
   constructor() {}
@@ -25,7 +25,7 @@ export class CarouselService {
     this.loadImages(imageSources);
   }
 
-  public onImageLoad(): Observable<string | string[]> {
+  public onImageLoad(): Observable<string> {
     return this.imageLoad.asObservable();
   }
 

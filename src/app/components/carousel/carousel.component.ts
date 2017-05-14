@@ -28,7 +28,7 @@ export class CarouselComponent implements OnInit {
 
   constructor(private carouselService: CarouselService, private windowWidthService: WindowWidthService) {
     this.carouselService.onImageLoad().subscribe(
-      (images) => this.loadedImages = this.loadedImages.concat(images)
+      (image) => this.loadedImages.push(image)
     );
   }
 

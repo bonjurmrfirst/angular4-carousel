@@ -42,9 +42,7 @@ export class CarouselComponent implements OnInit {
       return;
     }
 
-    if (this.config.verifyBeforeLoad) {
-      this.carouselService.init(showWhenLoad, this.config);
-    }
+    this.carouselService.init(showWhenLoad, this.config);
 
     if (this.config.autoplay) {
       this.config.autoplayDelay = this.config.autoplayDelay < 1000 ? 1000 : this.config.autoplayDelay;

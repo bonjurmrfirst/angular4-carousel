@@ -22,6 +22,10 @@ export class CarouselService {
 
     this.config = config;
 
+    if (!this.config.verifyBeforeLoad) {
+      return;
+    }
+
     this.loadImages(imageSources);
   }
 

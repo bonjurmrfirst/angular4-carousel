@@ -47,6 +47,8 @@ export class CarouselComponent implements OnInit {
     }
 
     if (this.config.autoplay) {
+      this.config.autoplayDelay = this.config.autoplayDelay < 1000 ? 1000 : this.config.autoplayDelay;
+
       const minWidth = this.config.stopAutoplayMinWidth;
 
       this.windowWidthService.onResize(minWidth, true).subscribe(

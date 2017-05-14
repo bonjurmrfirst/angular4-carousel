@@ -27,8 +27,11 @@ imports: [CarouselModule]
 
 **component template:**
 
+add carousel and container 
 ```
-<carousel [sources]="imageSources" [config]="config"></carousel>
+<div style="width: 800px; height: 400px">
+  <carousel [sources]="imageSources" [config]="config"></carousel>
+</div>
 ```
 
 <br/>

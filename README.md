@@ -86,7 +86,12 @@ _autoplay:_<br/>
 values: false, true
 
 _autoplayDelay:_ <br/>
-values: [number]
+values: [number] (ms)
+
+_stopAutoplayMinWidth:_ <br/>
+values: [number] (px)
+Prop for preventing autoplay on mobile devices.
+If window width (w/o scroll) <= value, autoplay will stop.
 
 ## API
 

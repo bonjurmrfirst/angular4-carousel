@@ -12,12 +12,15 @@ import {
 export class CarouselService {
   private imageLoadedCount = 0;
 
-  private imageLoad = new Subject<string>();
+  private imageLoad: Subject<string>;
   private config: ICarouselConfig;
 
   constructor() {}
 
   public init(imageSources: string[], config: ICarouselConfig) {
+    this.imageLoadedCount = 0;
+    this.imageLoad = new Subject<string>();
+
     config.autoplayDelay = config.autoplayDelay < 1000 ? 1000 : config.autoplayDelay;
 
     this.config = config;

@@ -26,11 +26,7 @@ export class CarouselComponent implements OnInit {
   public galleryLength: number;
   public currentSlide = 0;
 
-  constructor(private carouselService: CarouselService, private windowWidthService: WindowWidthService) {
-    this.carouselService.onImageLoad().subscribe(
-      (image) => this.loadedImages.push(image)
-    );
-  }
+  constructor(private carouselService: CarouselService, private windowWidthService: WindowWidthService) { }
 
   ngOnInit() {
     this.galleryLength = this.sources.length;
@@ -43,6 +39,10 @@ export class CarouselComponent implements OnInit {
     }
 
     this.carouselService.init(showWhenLoad, this.config);
+
+    this.carouselService.onImageLoad().subscribe(
+      (image) => this.loadedImages.push(image)
+    );
 
     if (this.config.autoplay) {
       this.config.autoplayDelay = this.config.autoplayDelay < 1000 ? 1000 : this.config.autoplayDelay;

@@ -127,16 +127,5 @@ describe('CarouselService', () => {
       expect((service as any).config.autoplayDelay).toBe(1000);
     }));
 
-    it('should return all images as loaded if config includes verifyBeforeLoad -> false',
-      inject([CarouselService], (service: CarouselService) => {
-      const onImageLoad = service.onImageLoad();
-
-      service.init(imageSources, config) ;
-
-      onImageLoad.subscribe(() => {
-        expect(true).toBeTruthy();
-      });
-    }));
-
   });
 });

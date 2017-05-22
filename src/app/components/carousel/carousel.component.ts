@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, ViewChild, forwardRef } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, ViewChild, forwardRef } from '@angular/core';
+import "rxjs/add/operator/takeWhile";
 
 import { CarouselService, ICarouselConfig, WindowWidthService } from '../../services';
 
@@ -11,7 +12,7 @@ import { CarouselHandlerDirective } from '../../directives';
   templateUrl: 'carousel.template.html',
   styleUrls: ['assets/carousel.styles.scss']
 })
-export class CarouselComponent implements OnInit {
+export class CarouselComponent implements OnInit, OnDestroy {
   @Input() private sources: string[];
   @Input() private config: ICarouselConfig;
 
@@ -40,16 +41,20 @@ export class CarouselComponent implements OnInit {
 
     this.carouselService.init(showWhenLoad, this.config);
 
-    this.carouselService.onImageLoad().subscribe(
-      (image) => this.loadedImages.push(image)
-    );
+    this.carouselService.onImageLoad()
+      .takeWhile(() => !!this.galleryLength)
+      .subscribe(
+        (image) => this.loadedImages.push(image)
+      );
 
     if (this.config.autoplay) {
       this.config.autoplayDelay = this.config.autoplayDelay < 1000 ? 1000 : this.config.autoplayDelay;
 
       const minWidth = this.config.stopAutoplayMinWidth;
 
-      this.windowWidthService.onResize(minWidth, true).subscribe(
+      this.windowWidthService.onResize(minWidth, true)
+        .takeWhile(() => !!this.galleryLength)
+        .subscribe(
         (isMinWidth) => {
           this.preventAutoplay = !isMinWidth;
           this.onHandleAutoplay(!this.config.autoplay);
@@ -104,5 +109,11 @@ export class CarouselComponent implements OnInit {
 
     this.carouselArrowsComponent.disableNavButtons();
     this.pinsComponent.disableNavButtons();
+  }
+
+  ngOnDestroy() {
+    if (this.autoplayIntervalId) {
+      clearInterval(this.autoplayIntervalId);
+    }
   }
 }

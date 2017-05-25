@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnDestroy, ViewChild, forwardRef } from '@angular/core';
-import "rxjs/add/operator/takeWhile";
+import 'rxjs/add/operator/takeWhile';
 
 import { CarouselService, ICarouselConfig, WindowWidthService } from '../../services';
 

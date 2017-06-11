@@ -11,7 +11,9 @@ import {
   CarouselComponent,
   SlideComponent,
   CarouselArrowsComponent,
-  PinsComponent
+  PinsComponent,
+  ThumsComponent
+  
 } from './components';
 
 import { CarouselHandlerDirective } from './directives';
@@ -23,6 +25,7 @@ import { CarouselHandlerDirective } from './directives';
     SlideComponent,
     CarouselArrowsComponent,
     PinsComponent,
+    ThumsComponent,
     CarouselHandlerDirective
   ],
   imports: [

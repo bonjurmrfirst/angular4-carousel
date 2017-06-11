@@ -4,7 +4,8 @@ import {
   CarouselComponent,
   SlideComponent,
   CarouselArrowsComponent,
-  PinsComponent
+  PinsComponent,
+  ThumsComponent
 } from './carousel';
 
 export {
@@ -12,5 +13,6 @@ export {
   CarouselComponent,
   SlideComponent,
   CarouselArrowsComponent,
-  PinsComponent
+  PinsComponent,
+  ThumsComponent
 };

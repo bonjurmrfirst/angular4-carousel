@@ -1,0 +1,6 @@
+<ul class="thum-wrapper">
+  <li class="thum" *ngFor="let counter of images; let i = index" (click)="onChangeSlide(i)">
+    <figure><a ><img [src]="counter" alt=""></a>
+    </figure>
+  </li>
+</ul>

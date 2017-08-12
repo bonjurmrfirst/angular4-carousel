@@ -4,6 +4,7 @@ import 'rxjs/add/operator/takeWhile';
 import { CarouselService, ICarouselConfig, WindowWidthService } from '../../services';
 
 import { PinsComponent } from './pins';
+import { ThumsComponent } from './thums';
 import { CarouselArrowsComponent } from './arrows';
 import { CarouselHandlerDirective } from '../../directives';
 
@@ -19,6 +20,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   @ViewChild(forwardRef(() => CarouselHandlerDirective)) private carouselHandlerDirective: CarouselHandlerDirective;
   @ViewChild(CarouselArrowsComponent) private carouselArrowsComponent: CarouselArrowsComponent;
   @ViewChild(PinsComponent) private pinsComponent: PinsComponent;
+  @ViewChild(ThumsComponent) private thumsComponent: ThumsComponent;
 
   private autoplayIntervalId;
   private preventAutoplay: boolean;

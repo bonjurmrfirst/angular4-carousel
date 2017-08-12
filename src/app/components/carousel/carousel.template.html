@@ -17,3 +17,9 @@
     *ngIf="galleryLength > 1"
     (changeSlide)="onChangeSlide($event);"></carousel-arrows>
 </div>
+<carousel-thums
+  *ngIf="galleryLength > 1"
+  [images]="loadedImages"
+  [currentSlide]="currentSlide"
+  (changeSlide)="onChangeSlideIndex($event);">
+</carousel-thums>

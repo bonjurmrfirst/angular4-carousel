@@ -11,7 +11,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 export class WindowWidthService {
   private minWidthBreakpoint: number;
 
-  public onResize(minWidthBreakpoint: number, scrollBar?: boolean): Observable<boolean> {
+  public onResize(minWidthBreakpoint: number, scrollBar?: boolean): Observable<boolean | {}> {
     this.minWidthBreakpoint = minWidthBreakpoint;
 
     return Observable.fromEvent(window, 'resize')

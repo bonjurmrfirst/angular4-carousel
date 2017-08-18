@@ -9,7 +9,7 @@ import { ICarouselConfig, AnimationConfig } from '../services';
 })
 export class AppComponent {
   public imageSources: string[] = [
-    'http://www.violinshoptampa.com/Violin%20Shop%20Tampa-15.jpg',
+    'http://www.violinshoptampa.com/assets/images/Panorama2a.jpg',
     'http://gomighty.com/wp-content/themes/gomighty/lib/goal_images/files/SMusicPianoAntiqueshutterstock_-1920.jpg',
     'https://d1llvcsapfiksz.cloudfront.net/vendors/samplephonics/deep-sax/images/DeepSax_mobile.jpg',
     'https://www.abamet.ru/images/press/haas/press-releases/2013/gaboi-rigoutat.jpg'

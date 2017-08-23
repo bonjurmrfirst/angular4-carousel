@@ -15,7 +15,7 @@ export class WindowWidthService {
     this.minWidthBreakpoint = minWidthBreakpoint;
 
     return Observable.fromEvent(window, 'resize')
-      .map(this.assertSize.bind(this, scrollBar))
+      .map(() => this.assertSize(scrollBar))
       .startWith(this.assertSize(scrollBar))
       .distinctUntilChanged();
   };

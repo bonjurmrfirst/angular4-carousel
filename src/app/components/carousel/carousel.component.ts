@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy, ViewChild, forwardRef } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, OnDestroy, ViewChild, forwardRef } from '@angular/core';
 import 'rxjs/add/operator/takeWhile';
 
 import { CarouselService, ICarouselConfig, WindowWidthService } from '../../services';
@@ -12,7 +12,7 @@ import { CarouselHandlerDirective } from '../../directives';
   templateUrl: 'carousel.template.html',
   styleUrls: ['assets/carousel.styles.scss']
 })
-export class CarouselComponent implements OnInit, OnDestroy {
+export class CarouselComponent implements OnInit, OnChanges, OnDestroy  {
   @Input() private sources: string[];
   @Input() private config: ICarouselConfig;
 
@@ -30,6 +30,14 @@ export class CarouselComponent implements OnInit, OnDestroy {
   constructor(private carouselService: CarouselService, private windowWidthService: WindowWidthService) { }
 
   ngOnInit() {
+    this.initData();
+  }
+
+  ngOnChanges() {
+    this.initData();
+  }
+
+  public initData() {
     this.galleryLength = this.sources.length;
 
     const [showImmediate, ...showWhenLoad] = this.sources;

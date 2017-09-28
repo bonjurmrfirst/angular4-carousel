@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/dm/angular4-carousel.svg)](https://www.npmjs.com/package/angular4-carousel)
+
 # Angular4Carousel
 
 Configurable angular carousel

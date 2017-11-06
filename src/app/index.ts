@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { BrowserModule } from '@angular/platform-browser';
 import { CarouselService, WindowWidthService } from './services';
 
 import {
@@ -23,7 +23,8 @@ import { CarouselHandlerDirective } from './directives';
     CarouselHandlerDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule
   ],
   exports: [CarouselComponent],
   providers: [CarouselService, WindowWidthService],

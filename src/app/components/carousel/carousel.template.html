@@ -7,7 +7,7 @@
   </carousel-slide>
 
   <carousel-pins
-    *ngIf="galleryLength > 1"
+    *ngIf="config.pins == true && galleryLength > 1"
     [images]="loadedImages"
     [currentSlide]="currentSlide"
     (changeSlide)="onChangeSlideIndex($event);">

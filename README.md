@@ -1,5 +1,4 @@
 [![npm](https://img.shields.io/npm/dm/angular4-carousel.svg)](https://www.npmjs.com/package/angular4-carousel)
-
 [![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)](https://github.com/bonjurmrfirst/angular4-carousel)
 
 -Project is not supported-

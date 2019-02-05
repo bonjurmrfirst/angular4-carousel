@@ -22,15 +22,16 @@ export class CarouselComponent implements OnInit, OnDestroy {
 
   private autoplayIntervalId;
   private preventAutoplay: boolean;
-
   public loadedImages: string[];
   public galleryLength: number;
   public currentSlide = 0;
+  public hideElement: boolean;
 
   constructor(private carouselService: CarouselService, private windowWidthService: WindowWidthService) { }
 
   ngOnInit() {
     this.initData();
+    this.hideElement = this.config.hideNavElements;
   }
 
   public initData() {
@@ -110,7 +111,6 @@ export class CarouselComponent implements OnInit, OnDestroy {
     if (!this.config.animation) {
       return;
     }
-
     this.carouselArrowsComponent.disableNavButtons();
     this.pinsComponent.disableNavButtons();
   }

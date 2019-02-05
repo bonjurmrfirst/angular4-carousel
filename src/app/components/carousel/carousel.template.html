@@ -10,10 +10,12 @@
     *ngIf="galleryLength > 1"
     [images]="loadedImages"
     [currentSlide]="currentSlide"
-    (changeSlide)="onChangeSlideIndex($event);">
+    (changeSlide)="onChangeSlideIndex($event);"
+    [hideElement]="hideElement"
+    [style.visibility]="hideElement ? 'hidden' : 'none'">
   </carousel-pins>
 
   <carousel-arrows
     *ngIf="galleryLength > 1"
-    (changeSlide)="onChangeSlide($event);"></carousel-arrows>
+    (changeSlide)="onChangeSlide($event);" [style.visibility]="hideElement ? 'hidden' : 'none'"></carousel-arrows>
 </div>

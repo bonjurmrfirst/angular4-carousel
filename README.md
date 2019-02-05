@@ -33,7 +33,7 @@ imports: [CarouselModule]
 
 **component template:**
 
-add carousel and container 
+add carousel and container
 ```
 <div style="width: 800px; height: 400px">
   <carousel [sources]="imageSources" [config]="config"></carousel>
@@ -43,7 +43,7 @@ add carousel and container
 <br/>
 
 **component ts:**
- 
+
 ```
 import { ICarouselConfig, AnimationConfig } from 'angular4-carousel';
 ```
@@ -55,7 +55,7 @@ public imageSources: string[] = [
      'path to img2',
      'path to img3'
   ];
-  
+
   public config: ICarouselConfig = {
     verifyBeforeLoad: true,
     log: false,
@@ -63,16 +63,17 @@ public imageSources: string[] = [
     animationType: AnimationConfig.SLIDE,
     autoplay: true,
     autoplayDelay: 2000,
-    stopAutoplayMinWidth: 768
+    stopAutoplayMinWidth: 768,
+    hideNavElements: false;
   };
 ```
-  
-**Add font awesome to your project.** 
+
+**Add font awesome to your project.**
 ```
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 ```
 (you can add font awesome using CLI or directly or CDN, or whatever you want, or redefine default styles for arrows ;) with pure CSS )
-  
+
 ## Config
 
 _verifyBeforeLoad_ <br/>
@@ -102,6 +103,10 @@ values: [number] (px)
 Prop for preventing autoplay on mobile devices.
 If window width (w/o scroll) <= value, autoplay will stop.
 
+_hideNavElements:_ <br/>
+values: false, true
+Hides the Navigation arrows and the pins
+
 ## API
 
 You can catch event on image loaded <br/>
@@ -126,4 +131,3 @@ this.x.onImageLoad().subscribe(
       () => console.log('all imgs loaded')
     )
 ```
-

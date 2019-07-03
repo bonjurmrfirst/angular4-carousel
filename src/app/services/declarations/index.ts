@@ -8,4 +8,5 @@ export interface ICarouselConfig {
   autoplay: boolean;
   autoplayDelay: number;
   stopAutoplayMinWidth: number;
+  pins: boolean;
 }
